@@ -1,0 +1,49 @@
+---
+title: "Do teste de carga ao tamanho do servidor"
+summary: "Testes de carga no JMeter traduzidos em uma recomendação de servidor que o cliente usou para decidir o investimento."
+outcome: "Uma recomendação objetiva: 8 GB de RAM, 4 núcleos e 200 GB de disco."
+tracks: [devops, software]
+status: done
+role: "Rodei os testes de carga, li os resultados e escrevi a recomendação de dimensionamento entregue ao cliente."
+period: "THCS"
+stack: [JMeter, Testes de carga, Linux, Dimensionamento de servidores]
+featured: false
+order: 9
+cover: "art:load"
+coverAlt: "Ilustração de um teste de carga: barras de usuários simultâneos crescendo, uma linha de tempo de resposta e um cartão com a configuração de servidor recomendada."
+confidential: true
+---
+
+<CaseStudy.Context>
+
+O cliente precisava decidir quanto investir em servidores para uma aplicação. A pergunta era de negócio, mas a resposta estava em números técnicos: quanta carga o sistema aguenta, e com qual máquina.
+
+</CaseStudy.Context>
+
+<CaseStudy.Process>
+
+<CaseStudy.Step title="Gerar a carga">
+Os testes foram feitos no JMeter, simulando o uso da aplicação sob volume crescente de requisições.
+</CaseStudy.Step>
+
+<CaseStudy.Step title="Ler o resultado como quem vai pagar a conta">
+Um relatório de teste de carga fala em tempos de resposta, vazão e erros. Quem aprova o investimento precisa de outra coisa: <Mark>qual servidor comprar</Mark>. O trabalho foi fazer essa tradução.
+</CaseStudy.Step>
+
+<CaseStudy.Step title="Entregar uma recomendação, não um relatório">
+O resultado virou uma configuração única e justificada, em vez de uma tabela para o cliente interpretar sozinho.
+</CaseStudy.Step>
+
+</CaseStudy.Process>
+
+<CaseStudy.Result>
+
+<Metrics>
+  <MetricPanel label="Memória" value="8 GB" hint="RAM recomendada" />
+  <MetricPanel label="Processamento" value="4 núcleos" hint="CPU recomendada" />
+  <MetricPanel label="Armazenamento" value="200 GB" hint="disco recomendado" />
+</Metrics>
+
+A recomendação serviu de base para a decisão de investimento do cliente. Os dados do teste e o ambiente são confidenciais; por isso esta página mostra só a conclusão.
+
+</CaseStudy.Result>

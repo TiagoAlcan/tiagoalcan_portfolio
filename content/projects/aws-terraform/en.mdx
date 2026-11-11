@@ -1,7 +1,7 @@
 ---
 title: "AWS infrastructure with Terraform"
 summary: "An environment described as code: an API on EC2, a database in a private subnet and an architecture document. Phase 1 of my postgraduate program."
-outcome: "A whole environment reproducible with one command, for about US$ 28.64 a month."
+outcome: "A whole environment reproducible with one command, at an estimated US$ 28.64 a month."
 tracks: [devops]
 status: done
 role: "Group work with five people, for the postgraduate program in DevOps and Cloud Architecture."
@@ -41,7 +41,7 @@ A Dockerfile and a Docker Compose file bring the application and the database up
 </CaseStudy.Step>
 
 <CaseStudy.Step title="Measure what was built">
-The project was assessed against the twelve factors and had its cost estimated in the AWS calculator before anything was provisioned.
+The project was audited against the twelve factors. The one it failed taught the most: in production the build ran on the server itself, with no artifact, no version and no rollback. The proposed fix is a CI job that builds the image and pushes it to ECR with a versioned tag.
 </CaseStudy.Step>
 
 </CaseStudy.Process>
@@ -49,10 +49,12 @@ The project was assessed against the twelve factors and had its cost estimated i
 <CaseStudy.Result>
 
 <Metrics>
-  <MetricPanel label="Estimated cost" value="US$ 28.64" hint="per month, running continuously in us-east-1" />
+  <MetricPanel label="Estimated cost" value="US$ 28.64" hint="per month; about US$ 344 over 12 months" />
   <MetricPanel label="Twelve factors met" value="8 of 12" hint="3 partially met and 1 not met" />
   <MetricPanel label="Public access to the database" value="0" hint="only the application talks to RDS" />
 </Metrics>
+
+The cost is an **estimate**, not a bill: it was worked out in the [AWS Pricing Calculator](https://calculator.aws/) before any resource was provisioned, for continuous use in `us-east-1`.
 
 The repository is public and includes the Terraform code, the Dockerfile, the Docker Compose file and the architecture document.
 

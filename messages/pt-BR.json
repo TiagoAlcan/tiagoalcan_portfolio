@@ -65,7 +65,7 @@
     "intro": "Faço parte do time que opera um autorizador de pagamentos com mais de 1 milhão de transações por dia. Meu papel fica do lado da observabilidade: as métricas, os painéis e os alertas que mostram o que o sistema está fazendo.",
     "ctaProjects": "Ver projetos",
     "ctaContact": "Falar comigo",
-    "portraitAlt": "Marca de Tiago Alcântara",
+    "portraitAlt": "Retrato de Tiago Alcântara",
     "experience": "Em produção desde 2023"
   },
   "tracks": {
@@ -159,8 +159,9 @@
     "stackWork": "No trabalho",
     "stackStudy": "Estudo e projetos",
     "cvTitle": "Currículo",
-    "cvBody": "O currículo em PDF, em português e em inglês, está sendo refeito. Enquanto isso, o LinkedIn tem o histórico completo.",
-    "cvLink": "Ver no LinkedIn"
+    "cvBody": "O currículo em PDF, com duas páginas, em português e em inglês.",
+    "cvPt": "Baixar em português",
+    "cvEn": "Baixar em inglês"
   },
   "experience": {
     "label": "experiência",

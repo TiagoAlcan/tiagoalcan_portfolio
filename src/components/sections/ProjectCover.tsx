@@ -146,6 +146,53 @@ const art: Record<string, React.ReactNode> = {
       <path d="M252 140l7 7 14-16" fill="none" stroke={ACCENT} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
     </>
   ),
+  load: (
+    <>
+      <rect x="24" y="26" width="176" height="148" rx="6" {...LINE} />
+      {[18, 30, 44, 60, 78, 96].map((h, i) => (
+        <rect key={i} x={38 + i * 26} y={160 - h} width="16" height={h} rx="2" fill={INK} opacity="0.55" />
+      ))}
+      <path d="M46 132 72 128 98 122 124 110 150 84 176 46" fill="none" stroke={ACCENT} strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="176" cy="46" r="4" fill={ACCENT} />
+      <text x="36" y="42" {...mono} fill={INK} opacity="0.6">
+        p95 · users
+      </text>
+      <rect x="214" y="48" width="84" height="104" rx="6" fill="var(--bg)" stroke={INK} strokeOpacity="0.45" strokeWidth="1.2" />
+      {["8 GB", "4 cores", "200 GB"].map((label, i) => (
+        <g key={label} transform={`translate(226 ${72 + i * 30})`}>
+          <circle cx="4" cy="-3" r="3.5" fill={i === 0 ? ACCENT : INK} opacity={i === 0 ? 1 : 0.6} />
+          <text x="14" y="0" {...mono} fill={INK}>
+            {label}
+          </text>
+        </g>
+      ))}
+    </>
+  ),
+  registry: (
+    <>
+      <circle cx="46" cy="100" r="10" fill="none" stroke={INK} strokeOpacity="0.6" strokeWidth="1.6" />
+      <path d="M18 100h18m20 0h22m-5-5 5 5-5 5" fill="none" stroke={INK} strokeOpacity="0.5" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+      <text x="46" y="128" textAnchor="middle" {...mono} fill={INK} opacity="0.65">
+        commit
+      </text>
+      <rect x="86" y="72" width="88" height="56" rx="8" fill={ACCENT} />
+      <text x="130" y="97" textAnchor="middle" {...mono} fill="var(--bg)">
+        image
+      </text>
+      <text x="130" y="113" textAnchor="middle" {...mono} fontSize="10" fontWeight="700" fill="var(--bg)">
+        :1.4.2
+      </text>
+      {["dev", "staging", "prod"].map((label, i) => (
+        <g key={label}>
+          <path d={`M174 100C200 100 200 ${48 + i * 52} 224 ${48 + i * 52}`} fill="none" stroke={INK} strokeOpacity="0.45" strokeWidth="1.3" />
+          <rect x="224" y={32 + i * 52} width="72" height="32" rx="6" fill="var(--bg)" stroke={INK} strokeOpacity="0.45" strokeWidth="1.2" />
+          <text x="260" y={52 + i * 52} textAnchor="middle" {...mono} fill={INK}>
+            {label}
+          </text>
+        </g>
+      ))}
+    </>
+  ),
   chart: (
     <>
       {["raw", "processed", "curated"].map((label, i) => (

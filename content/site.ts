@@ -11,6 +11,12 @@ export const contact = {
   github: "https://github.com/TiagoAlcan",
 } as const;
 
+/** The résumé PDFs, rendered from docs/cv by docs/cv/build.sh. */
+export const resume: Localized = {
+  "pt-BR": "/cv/tiago-alcantara-cv-pt-br.pdf",
+  en: "/cv/tiago-alcantara-cv-en.pdf",
+};
+
 export const tracks: Record<Track, { label: Localized; tagline: Localized; proofs: Localized }> = {
   software: {
     label: { "pt-BR": "Software", en: "Software" },

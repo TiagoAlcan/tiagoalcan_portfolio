@@ -1,7 +1,7 @@
 ---
 title: "Infraestrutura AWS com Terraform"
 summary: "Um ambiente descrito como código: API em EC2, banco em sub-rede privada e um documento de arquitetura. Entrega da fase 1 da pós."
-outcome: "Ambiente inteiro reproduzível com um comando, por cerca de US$ 28,64 ao mês."
+outcome: "Ambiente inteiro reproduzível com um comando, com custo estimado de US$ 28,64 ao mês."
 tracks: [devops]
 status: done
 role: "Trabalho em grupo de cinco pessoas, na pós em DevOps e Arquitetura Cloud."
@@ -41,7 +41,7 @@ Um Dockerfile e um Docker Compose sobem a aplicação e o banco localmente, para
 </CaseStudy.Step>
 
 <CaseStudy.Step title="Medir o que se construiu">
-O projeto foi avaliado contra os 12 fatores e teve o custo estimado na calculadora da AWS antes de ser provisionado.
+O projeto foi auditado contra os 12 fatores. O fator não atendido foi o que mais ensinou: em produção, o build rodava no próprio servidor, sem artefato, sem versão e sem rollback. A correção proposta é um CI que gera a imagem e a publica no ECR com tag versionada.
 </CaseStudy.Step>
 
 </CaseStudy.Process>
@@ -49,10 +49,12 @@ O projeto foi avaliado contra os 12 fatores e teve o custo estimado na calculado
 <CaseStudy.Result>
 
 <Metrics>
-  <MetricPanel label="Custo estimado" value="US$ 28,64" hint="por mês, uso contínuo em us-east-1" />
+  <MetricPanel label="Custo estimado" value="US$ 28,64" hint="por mês; cerca de US$ 344 em 12 meses" />
   <MetricPanel label="12 fatores atendidos" value="8 de 12" hint="3 parciais e 1 não atendido" />
   <MetricPanel label="Acesso público ao banco" value="0" hint="só a aplicação fala com o RDS" />
 </Metrics>
+
+O custo é uma **estimativa**, não uma fatura: foi calculado na [calculadora de preços da AWS](https://calculator.aws/) antes de qualquer recurso ser provisionado, para uso contínuo em `us-east-1`.
 
 O repositório é público e traz o Terraform, o Dockerfile, o Docker Compose e o documento de arquitetura.
 

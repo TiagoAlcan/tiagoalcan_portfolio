@@ -71,6 +71,8 @@ Projetos com `confidential: true` exibem, logo abaixo do topo, a frase: *"Os dad
 | `risco-credito-grafos` | Risco de crédito PJ com banco de grafos | Data, AI | não | não | Visualização do grafo |
 | `testes-bdd` | Documentação de testes em BDD | Software | não | sim | Exemplo de cenário fictício |
 | `projeto-restart` | Da API e do scraping ao dashboard | Data | não | não | Gravação do dashboard; repositório público |
+| `teste-carga-dimensionamento` | Do teste de carga ao tamanho do servidor | DevOps, Software | não | sim | Ilustração; só a conclusão é pública |
+| `padronizacao-deploys` | Deploys padronizados com Git e Docker Hub | DevOps | não | sim | Ilustração e comando fictício |
 
 ### Fatos disponíveis por projeto
 

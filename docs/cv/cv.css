@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400&family=Instrument+Sans:ital,wght@0,400;0,600;1,400&display=block");
+@page { size: A4; margin: 22mm 18mm 20mm; }
+* { box-sizing: border-box; }
+html { font-size: 11pt; }
+body { margin: 0; font-family: "Instrument Sans", sans-serif; color: #1f1e1d; line-height: 1.5; }
+h1, h2 { font-family: "Fraunces", serif; font-weight: 400; color: #1f1e1d; }
+h1 { font-size: 24pt; margin: 0 0 12pt; letter-spacing: -0.01em; }
+h2 { font-size: 16pt; margin: 20pt 0 6pt; break-after: avoid; }
+h3 { font-size: 11pt; font-weight: 600; margin: 10pt 0 4pt; break-after: avoid; }
+h3 em { font-weight: 400; }
+p { margin: 0 0 7pt; }
+.headline { font-weight: 600; }
+a { color: #2c6fbb; }
+ul { margin: 0 0 4pt; padding-left: 16pt; }
+li { margin-bottom: 4pt; break-inside: avoid; }
+strong { font-weight: 600; }

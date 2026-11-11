@@ -1,0 +1,49 @@
+---
+title: "From load test to server size"
+summary: "JMeter load tests translated into a server recommendation the client used to decide how much to invest."
+outcome: "A clear recommendation: 8 GB of RAM, 4 cores and 200 GB of disk."
+tracks: [devops, software]
+status: done
+role: "I ran the load tests, read the results and wrote the sizing recommendation delivered to the client."
+period: "THCS"
+stack: [JMeter, Load testing, Linux, Server sizing]
+featured: false
+order: 9
+cover: "art:load"
+coverAlt: "Illustration of a load test: bars of concurrent users growing, a response-time line and a card with the recommended server configuration."
+confidential: true
+---
+
+<CaseStudy.Context>
+
+The client had to decide how much to invest in servers for an application. The question was a business one, but the answer lived in technical numbers: how much load the system can take, and on which machine.
+
+</CaseStudy.Context>
+
+<CaseStudy.Process>
+
+<CaseStudy.Step title="Generate the load">
+The tests ran in JMeter, simulating use of the application under a growing volume of requests.
+</CaseStudy.Step>
+
+<CaseStudy.Step title="Read the result like the person paying for it">
+A load-test report talks about response times, throughput and errors. Whoever approves the investment needs something else: <Mark>which server to buy</Mark>. The work was making that translation.
+</CaseStudy.Step>
+
+<CaseStudy.Step title="Deliver a recommendation, not a report">
+The result became a single, justified configuration instead of a table for the client to interpret alone.
+</CaseStudy.Step>
+
+</CaseStudy.Process>
+
+<CaseStudy.Result>
+
+<Metrics>
+  <MetricPanel label="Memory" value="8 GB" hint="recommended RAM" />
+  <MetricPanel label="Processing" value="4 cores" hint="recommended CPU" />
+  <MetricPanel label="Storage" value="200 GB" hint="recommended disk" />
+</Metrics>
+
+The recommendation informed the client's investment decision. The test data and the environment are confidential, so this page shows only the conclusion.
+
+</CaseStudy.Result>

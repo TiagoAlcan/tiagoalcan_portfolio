@@ -1,6 +1,6 @@
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 
-import { LogoMark } from "@/components/brand/Logo";
 import { HeroGraph } from "@/components/three/HeroGraph";
 import { HeroGraphStatic } from "@/components/three/HeroGraphStatic";
 import { ArrowRight } from "@/components/ui/icons";
@@ -24,8 +24,8 @@ export async function Hero() {
 
       <div className="shell grid items-center gap-8 py-14 md:grid-cols-[auto_1fr] md:gap-14 md:py-24">
         <div className="relative mx-auto size-40 shrink-0 md:mx-0 md:size-56 lg:size-64">
-          <div className="flex size-full items-center justify-center rounded-full bg-surface text-heading outline-[3px] outline-offset-[6px] outline-action">
-            <LogoMark title={t("portraitAlt")} className="h-[46%]" />
+          <div className="relative size-full overflow-hidden rounded-full bg-surface outline-[3px] outline-offset-[6px] outline-action">
+            <Image src="/images/tiago-alcantara.webp" alt={t("portraitAlt")} fill priority sizes="(min-width: 1024px) 256px, (min-width: 768px) 224px, 160px" className="object-cover" />
           </div>
         </div>
 

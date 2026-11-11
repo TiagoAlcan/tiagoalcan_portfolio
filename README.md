@@ -38,7 +38,7 @@ Crie `content/projects/<slug>/pt-BR.mdx` e `en.mdx` com o frontmatter descrito e
 
 ## Trocar a marca
 
-`src/components/brand/marks.ts` traz as quatro opções. A constante `ACTIVE_MARK` escolhe a que aparece no site; o favicon está em `src/app/icon.svg`.
+`src/components/brand/marks.ts` traz as quatro opções. A constante `ACTIVE_MARK` escolhe a que aparece no site: hoje é a **D · Prompt**, nas versões clara e escura, com o cursor piscando. A **A · Grafo** continua guardada ali e segue viva no grafo do herói. O favicon está em `src/app/icon.svg`.
 
 ## Privacidade
 

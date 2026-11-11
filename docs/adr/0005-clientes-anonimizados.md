@@ -11,6 +11,10 @@ Parte importante da experiência do Tiago foi construída em sistemas de cliente
 
 **Nenhum cliente é citado pelo nome**, em nenhuma página, no README do GitHub nem no currículo para download. O texto usa "grandes instituições financeiras brasileiras" e mantém os números que descrevem a escala, como "mais de 1 milhão de transações por dia".
 
+## Exceção registrada em 2026-11-11
+
+Por decisão do Tiago, o **currículo em PDF** (`public/cv`, gerado de `docs/cv`) cita os clientes pelo nome e traz o telefone, como no currículo que ele já envia a recrutadores. As páginas do site e o README continuam anonimizados.
+
 ## Regras derivadas
 
 - Nenhum print de ambiente real, nome de host, endpoint interno ou diagrama de arquitetura do cliente.

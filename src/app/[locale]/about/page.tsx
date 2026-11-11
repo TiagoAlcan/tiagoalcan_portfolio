@@ -3,14 +3,14 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { Curiosities } from "@/components/sections/Curiosities";
 import { PageIntro } from "@/components/sections/PageIntro";
-import { ArrowUpRight, trackIcons } from "@/components/ui/icons";
+import { ArrowUpRight, Download, trackIcons } from "@/components/ui/icons";
 import { buttonStyles, MonoLabel, Section, Tag } from "@/components/ui/primitives";
 import { Underline } from "@/components/ui/underline";
 import type { Locale } from "@/i18n/routing";
 import { TRACKS } from "@/lib/content/schema";
 import { alternatesFor } from "@/lib/seo/metadata";
 import { coursesByTrack, education, postgradPhases, shortCourses } from "@content/education";
-import { contact, languages, stackByArea, tracks } from "@content/site";
+import { languages, resume, stackByArea, tracks } from "@content/site";
 
 export async function generateMetadata({ params }: PageProps<"/[locale]/about">): Promise<Metadata> {
   const { locale } = await params;
@@ -216,11 +216,15 @@ export default async function AboutPage({ params }: PageProps<"/[locale]/about">
               <div>
                 <h3 className="text-h3 text-heading">{t("cvTitle")}</h3>
                 <p className="mt-3 max-w-[48ch] text-[0.95rem] text-fg-muted">{t("cvBody")}</p>
-                <a href={contact.linkedin} target="_blank" rel="noreferrer" className={`${buttonStyles.secondary} mt-4`}>
-                  {t("cvLink")}
-                  <ArrowUpRight />
-                  <span className="sr-only">({a11y("external")})</span>
-                </a>
+                <div className="mt-4 flex flex-wrap gap-3">
+                  {(locale === "en" ? (["en", "pt-BR"] as const) : (["pt-BR", "en"] as const)).map((lang, i) => (
+                    <a key={lang} href={resume[lang]} download hrefLang={lang} className={i === 0 ? buttonStyles.primary : buttonStyles.secondary}>
+                      <Download />
+                      {t(lang === "en" ? "cvEn" : "cvPt")}
+                      <span className="sr-only"> (PDF)</span>
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

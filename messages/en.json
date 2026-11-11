@@ -65,7 +65,7 @@
     "intro": "I'm part of the team that operates a payment authorizer handling more than 1 million transactions a day. My role sits on the observability side: the metrics, dashboards and alerts that show what the system is doing.",
     "ctaProjects": "See projects",
     "ctaContact": "Get in touch",
-    "portraitAlt": "Tiago Alcântara's mark",
+    "portraitAlt": "Portrait of Tiago Alcântara",
     "experience": "In production since 2023"
   },
   "tracks": {
@@ -159,8 +159,9 @@
     "stackWork": "At work",
     "stackStudy": "Study and projects",
     "cvTitle": "Résumé",
-    "cvBody": "The PDF résumé, in Portuguese and English, is being rewritten. In the meantime, LinkedIn has the full history.",
-    "cvLink": "See on LinkedIn"
+    "cvBody": "The résumé as a two-page PDF, in English and in Portuguese.",
+    "cvPt": "Download in Portuguese",
+    "cvEn": "Download in English"
   },
   "experience": {
     "label": "experience",

@@ -124,3 +124,25 @@
   --logo-tile: var(--text);
   --logo-on-tile: var(--bg);
 }
+
+/* The prompt mark's cursor blinks where the next character would be typed. */
+@keyframes logo-blink {
+  0%,
+  55% {
+    opacity: 1;
+  }
+  56%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.logo-cursor {
+  animation: logo-blink 1.15s steps(1, end) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-cursor {
+    animation: none;
+  }
+}

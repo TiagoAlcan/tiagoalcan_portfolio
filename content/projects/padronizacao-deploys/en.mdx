@@ -1,0 +1,41 @@
+---
+title: "Standardized deploys with Git and Docker Hub"
+summary: "Application deploys versioned in Git and published as images on Docker Hub, so every environment runs the same thing."
+outcome: "Less drift between environments: the same versioned image everywhere."
+tracks: [devops]
+status: done
+role: "I standardized and version-controlled application deploys during my internship."
+period: "THCS · 2023 to 2025"
+stack: [Git, Docker, Docker Hub, Linux]
+featured: false
+order: 10
+cover: "art:registry"
+coverAlt: "Illustration of a commit that becomes an image with a version tag and is delivered identically to three environments."
+confidential: true
+---
+
+<CaseStudy.Context>
+
+When each environment gets the application in its own way, the differences show up at the worst moment: what worked in one place fails in another, and nobody can say which version is running where.
+
+</CaseStudy.Context>
+
+<CaseStudy.Process>
+
+<CaseStudy.Step title="What ships lives in Git">
+What defines a deploy became version-controlled. With history, you can tell what changed, when and why.
+</CaseStudy.Step>
+
+<CaseStudy.Step title="One image, one version">
+Applications started being published as images on Docker Hub. The environment stops assembling the application and <Mark>pulls the same image as the others</Mark>.
+</CaseStudy.Step>
+
+<Terminal title="made-up example" lines={["$ docker pull company/application:1.4.2", "$ docker run -d --name application company/application:1.4.2"]} />
+
+</CaseStudy.Process>
+
+<CaseStudy.Result>
+
+Deploys became standardized and versioned, with fewer inconsistencies between environments. The names of applications, images and servers are confidential; the command above only illustrates the format.
+
+</CaseStudy.Result>
