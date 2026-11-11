@@ -60,12 +60,17 @@ Os componentes usam apenas tokens semânticos. Nenhum hex aparece fora de `token
 | `--band-bg` | Cobalto | Cobalto a 84% sobre verde profundo | Faixa de seção em cor cheia (experiência na página inicial) |
 | `--on-band` | Creme | Creme | Texto sobre a faixa |
 | `--tint` | Cobalto a 8% sobre creme | Cobalto a 38% sobre verde profundo | Fundo de cartão em destaque (currículo) |
+| `--surface-alt` | Areia `#d4ad8a` | Ardósia `#1d3a47` | Fundo alternativo de seção: números da página inicial, rodapé, skills em Capacidades, páginas de demos e notas |
 
 Os valores com transparência são gerados com `color-mix()` e **precisam ter o contraste medido na implementação**: `--text-muted` tem de ficar em 4,5 ou mais sobre `--bg` e sobre `--surface`. Se não ficar, a porcentagem sobe.
 
 ### Segunda cor: cobalto
 
 O cobalto entrou para dar mais cor sem ampliar o uso do verde. A regra de divisão: **cobalto é estrutura** (rótulos, faixas, marcadores) e **laranja e vermelho continuam sendo ação e ênfase** (botões, sublinhados, anotações). Contrastes medidos: cobalto sobre creme 7,37; creme sobre a faixa 7,37 no claro e 8,32 no escuro; cobalto claro sobre verde profundo 6,97 e sobre verde 5,23. Laranja sobre cobalto fica em 2,78, então na faixa o laranja é só decoração (setas, ponto de status, sublinhado).
+
+### Fundo alternativo: areia e ardósia
+
+A classe `.surface-alt` aplica `--surface-alt` e, junto, troca as cores de texto pequeno, porque as da página não chegam a 4,5 sobre areia. Medido sobre areia: verde profundo 7,80; verde (títulos) 5,85; texto de apoio (verde profundo a 85%) 5,89; cobalto escurecido a 70% 5,23. Sobre ardósia: creme 10,21; texto de apoio 5,71; cobalto claro 5,19; laranja a 80% 4,59. O texto de apoio padrão (3,41) e o cobalto puro (4,19) **não** podem ser usados sobre areia fora dessa classe.
 
 ### Cores por trilha
 

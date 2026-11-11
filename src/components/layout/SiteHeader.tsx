@@ -13,7 +13,7 @@ export async function SiteHeader({ projects }: { projects: PaletteProject[] }) {
 
   return (
     <header className="sticky top-0 z-40 border-b border-edge bg-page/85 backdrop-blur-md">
-      <div className="shell relative flex h-16 items-center justify-between gap-3">
+      <div className="shell relative flex h-16 items-center justify-between gap-1 sm:gap-3">
         <Link href="/" aria-label={t("home")} className="-ml-1 inline-flex min-h-11 items-center rounded-(--radius-control) px-1 text-heading">
           <Logo />
         </Link>

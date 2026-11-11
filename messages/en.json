@@ -92,8 +92,13 @@
     "educationTitle": "Academic path",
     "educationLead": "Delivery comes first, but study is what holds each one up. Open a program to see its curriculum and what I took from it.",
     "experienceLabel": "experience",
-    "experienceTitle": "Professional experience",
-    "experienceLink": "See the full timeline"
+    "experienceTitle": "Professional timeline",
+    "experienceLink": "See the full timeline",
+    "timelineNowWhen": "today",
+    "timelineNowTitle": "Sustaining, evolving and studying",
+    "timelineNowBody": "I sustain and evolve the authorizer alongside the client, look after observability, and study DevOps and Cloud in the postgraduate course and data science in the bootcamp.",
+    "tickerPause": "Pause",
+    "tickerPlay": "Resume"
   },
   "project": {
     "status": {
@@ -200,13 +205,21 @@
     "copyFailed": "Could not copy. The address is {email}",
     "send": "Write an email",
     "linkedin": "LinkedIn",
-    "github": "GitHub"
+    "github": "GitHub",
+    "whatsapp": "Message on WhatsApp"
   },
   "footer": {
     "concept": "Making systems possible and visible.",
     "source": "Code on GitHub",
     "top": "Back to top",
-    "rights": "Tiago Alcântara"
+    "rights": "Tiago Alcântara",
+    "more": "More",
+    "links": "Contact and links",
+    "capabilities": "Capabilities",
+    "certificates": "Certificates",
+    "demos": "Demos",
+    "notes": "Notes",
+    "resume": "Résumé (PDF)"
   },
   "notFound": {
     "label": "error 404",
@@ -220,5 +233,79 @@
     "body": "The page did not load as it should.",
     "retry": "Try again",
     "home": "Back to home"
+  },
+  "skills": {
+    "label": "skills with evidence",
+    "title": "Where each skill was used",
+    "lead": "Each skill points to where it was applied: in professional experience or in a published case.",
+    "evidence": "Evidence:",
+    "all": "See all skills and capabilities",
+    "level": {
+      "work": "Professional use",
+      "both": "Work and projects",
+      "project": "Applied in projects"
+    }
+  },
+  "capabilities": {
+    "label": "capabilities",
+    "title": "What I can do, by area",
+    "lead": "Four areas, each with the problem it solves, what I deliver and a published case where it shows.",
+    "metaDescription": "Tiago Alcântara's capabilities in DevOps and Cloud, software, data and AI, with evidence of where each skill was used.",
+    "problem": "Problem it solves",
+    "builds": "What I deliver",
+    "example": "See the example: {title}"
+  },
+  "certificates": {
+    "label": "certificates",
+    "title": "Licences and certificates",
+    "lead": "{count} certificates, newest first, each with its credential code.",
+    "metaDescription": "Tiago Alcântara's licences and certificates, issued by FIAP and Alura.",
+    "credential": "Credential",
+    "view": "View credential",
+    "viewLinkedin": "View on LinkedIn",
+    "all": "See the list on LinkedIn"
+  },
+  "comingSoon": {
+    "stamp": "COMING SOON",
+    "terminalTitle": "tiago@portfolio: ~",
+    "joke": "The output above is a joke: the page answers 200, it just has no content yet.",
+    "projects": "See the projects",
+    "contact": "Get in touch"
+  },
+  "demos": {
+    "label": "demos",
+    "title": "No data in the selected range",
+    "lead": "The panel is ready, the query is right, and the series is still at zero: I have not published a demo yet. When the first one ships, it shows up here.",
+    "metaDescription": "Tiago Alcântara's interactive demos are not published yet. Coming soon.",
+    "range": "last 6h",
+    "empty": "No data",
+    "panelNote": "refreshes on the next deploy",
+    "alertSeverityKey": "severity",
+    "alertSeverity": "curiosity",
+    "alertSummaryKey": "summary",
+    "alertSummary": "No demo published so far.",
+    "alertActionKey": "action",
+    "alertAction": "Wait. The owner has been paged (it is me).",
+    "retryAfter": "soon",
+    "xStatus": "under construction, calmly",
+    "noPods": "No resources found in demos namespace.",
+    "meanwhileTitle": "While the series sits at zero",
+    "meanwhileBody": "The case studies already show what I built, with screens, decisions and results."
+  },
+  "notes": {
+    "label": "notes",
+    "title": "The notebook is still blank",
+    "lead": "Technical notes will live here: decisions, measurements and what I learned by getting it wrong. The first one is still a zero-word draft.",
+    "metaDescription": "Tiago Alcântara's technical notes are not published yet. Coming soon.",
+    "lsOut": "rascunho-01.md",
+    "gitOut": "(no commits yet)",
+    "sticky1Title": "TODO",
+    "sticky1Body": "Write the first note. Not today. Soon.",
+    "sticky2Title": "House rule",
+    "sticky2Body": "A good note has a measured number, not an adjective.",
+    "sticky3Title": "Promise",
+    "sticky3Body": "No lorem ipsum in here.",
+    "meanwhileTitle": "While the draft is not a note yet",
+    "meanwhileBody": "The case studies tell the decisions behind each project."
   }
 }

@@ -6,6 +6,7 @@ import { EducationExtras } from "@/components/sections/EducationExtras";
 import { EducationJourney } from "@/components/sections/EducationJourney";
 import { ExperienceHighlights } from "@/components/sections/ExperienceHighlights";
 import { Hero } from "@/components/sections/Hero";
+import { SkillsEvidence } from "@/components/sections/SkillsEvidence";
 import { StackMarquee } from "@/components/sections/StackMarquee";
 import { StatStrip } from "@/components/sections/StatStrip";
 import { TrackExplorer, TrackExplorerView } from "@/components/sections/TrackExplorer";
@@ -28,6 +29,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
   setRequestLocale(locale);
 
   const t = await getTranslations("home");
+  const s = await getTranslations("skills");
   const projects = await getFeaturedProjects(locale);
   const copy = trackCopyFor(locale);
 
@@ -72,6 +74,25 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
       </Section>
 
       <ExperienceHighlights locale={locale} />
+
+      <Section id="skills" aria-labelledby="skills-title" className="scroll-mt-20">
+        <div className="shell">
+          <MonoLabel>{s("label")}</MonoLabel>
+          <h2 id="skills-title" className="mt-3 text-h2 text-heading">
+            {s("title")}
+          </h2>
+          <p className="measure mt-4 text-body-lg">{s("lead")}</p>
+          <div className="mt-10">
+            <SkillsEvidence locale={locale} featuredOnly />
+          </div>
+          <p className="mt-10">
+            <Link href={{ pathname: "/capabilities", hash: "skills" }} className={buttonStyles.text}>
+              {s("all")}
+              <ArrowRight />
+            </Link>
+          </p>
+        </div>
+      </Section>
 
       <StatStrip />
 

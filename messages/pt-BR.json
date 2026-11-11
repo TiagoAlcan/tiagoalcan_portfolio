@@ -92,8 +92,13 @@
     "educationTitle": "Jornada acadêmica",
     "educationLead": "A entrega vem primeiro, mas é o estudo que sustenta cada uma. Abra uma formação para ver a grade e o que levei dela.",
     "experienceLabel": "experiência",
-    "experienceTitle": "Experiência profissional",
-    "experienceLink": "Ver a linha do tempo completa"
+    "experienceTitle": "Linha do tempo profissional",
+    "experienceLink": "Ver a linha do tempo completa",
+    "timelineNowWhen": "hoje",
+    "timelineNowTitle": "Sustentação, evolução e estudo",
+    "timelineNowBody": "Sustento e evoluo o autorizador junto ao cliente, cuido da observabilidade e estudo DevOps e Cloud na pós e ciência de dados no bootcamp.",
+    "tickerPause": "Pausar",
+    "tickerPlay": "Continuar"
   },
   "project": {
     "status": {
@@ -200,13 +205,21 @@
     "copyFailed": "Não foi possível copiar. O endereço é {email}",
     "send": "Escrever e-mail",
     "linkedin": "LinkedIn",
-    "github": "GitHub"
+    "github": "GitHub",
+    "whatsapp": "Chamar no WhatsApp"
   },
   "footer": {
     "concept": "Tornando sistemas possíveis e visíveis.",
     "source": "Código no GitHub",
     "top": "Voltar ao topo",
-    "rights": "Tiago Alcântara"
+    "rights": "Tiago Alcântara",
+    "more": "Mais",
+    "links": "Contato e links",
+    "capabilities": "Capacidades",
+    "certificates": "Certificados",
+    "demos": "Demos",
+    "notes": "Notas",
+    "resume": "Currículo em PDF"
   },
   "notFound": {
     "label": "erro 404",
@@ -220,5 +233,79 @@
     "body": "A página não carregou como deveria.",
     "retry": "Tentar de novo",
     "home": "Voltar ao início"
+  },
+  "skills": {
+    "label": "skills com evidência",
+    "title": "Onde cada skill foi usada",
+    "lead": "Cada skill aponta para onde foi aplicada: na experiência profissional ou em um caso publicado.",
+    "evidence": "Evidência:",
+    "all": "Ver todas as skills e capacidades",
+    "level": {
+      "work": "Uso profissional",
+      "both": "Trabalho e projetos",
+      "project": "Aplicada em projetos"
+    }
+  },
+  "capabilities": {
+    "label": "capacidades",
+    "title": "O que eu sei fazer, por área",
+    "lead": "Quatro áreas, cada uma com o problema que resolve, o que entrego e um caso publicado em que isso aparece.",
+    "metaDescription": "As capacidades de Tiago Alcântara em DevOps e Cloud, software, dados e IA, com evidência de onde cada skill foi usada.",
+    "problem": "Problema que resolve",
+    "builds": "O que entrego",
+    "example": "Ver o exemplo: {title}"
+  },
+  "certificates": {
+    "label": "certificados",
+    "title": "Licenças e certificados",
+    "lead": "{count} certificados, do mais recente ao mais antigo, com o código de cada credencial.",
+    "metaDescription": "Licenças e certificados de Tiago Alcântara, emitidos pela FIAP e pela Alura.",
+    "credential": "Credencial",
+    "view": "Ver credencial",
+    "viewLinkedin": "Ver no LinkedIn",
+    "all": "Ver a lista no LinkedIn"
+  },
+  "comingSoon": {
+    "stamp": "EM BREVE",
+    "terminalTitle": "tiago@portfolio: ~",
+    "joke": "A saída acima é uma brincadeira: a página responde 200, só não tem conteúdo ainda.",
+    "projects": "Ver os projetos",
+    "contact": "Falar comigo"
+  },
+  "demos": {
+    "label": "demos",
+    "title": "Sem dados no intervalo selecionado",
+    "lead": "O painel está pronto, a consulta está certa, e a série continua em zero: ainda não publiquei nenhuma demo. Quando a primeira subir, ela aparece aqui.",
+    "metaDescription": "As demos interativas de Tiago Alcântara ainda não foram publicadas. Em breve.",
+    "range": "últimas 6h",
+    "empty": "Sem dados",
+    "panelNote": "atualiza no próximo deploy",
+    "alertSeverityKey": "severidade",
+    "alertSeverity": "curiosidade",
+    "alertSummaryKey": "resumo",
+    "alertSummary": "Nenhuma demo publicada até agora.",
+    "alertActionKey": "ação",
+    "alertAction": "Aguardar. O responsável já foi avisado (sou eu).",
+    "retryAfter": "em breve",
+    "xStatus": "em construção, com calma",
+    "noPods": "No resources found in demos namespace.",
+    "meanwhileTitle": "Enquanto a série não sai do zero",
+    "meanwhileBody": "Os estudos de caso já mostram o que eu construí, com telas, decisões e resultado."
+  },
+  "notes": {
+    "label": "notas",
+    "title": "O caderno ainda está em branco",
+    "lead": "As notas técnicas vão morar aqui: decisões, medições e o que aprendi errando. A primeira ainda é um rascunho de zero palavras.",
+    "metaDescription": "As notas técnicas de Tiago Alcântara ainda não foram publicadas. Em breve.",
+    "lsOut": "rascunho-01.md",
+    "gitOut": "(nenhum commit ainda)",
+    "sticky1Title": "TODO",
+    "sticky1Body": "Escrever a primeira nota. Hoje não. Em breve.",
+    "sticky2Title": "Regra da casa",
+    "sticky2Body": "Nota boa tem número medido, não adjetivo.",
+    "sticky3Title": "Promessa",
+    "sticky3Body": "Nada de lorem ipsum por aqui.",
+    "meanwhileTitle": "Enquanto o rascunho não vira nota",
+    "meanwhileBody": "Os estudos de caso contam as decisões por trás de cada projeto."
   }
 }

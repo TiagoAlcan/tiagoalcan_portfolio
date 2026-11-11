@@ -136,6 +136,17 @@
   background-size: 22px 22px;
 }
 
+/*
+ * Alternate section background (sand / slate). Small-text colours are
+ * re-derived here because the page-level ones fall short of 4.5:1 on sand.
+ */
+.surface-alt {
+  background-color: var(--surface-alt);
+  --text-muted: var(--alt-muted);
+  --accent-2: var(--alt-accent-2);
+  --accent-text: var(--alt-accent-text);
+}
+
 /* Scroll reveal: short lift and fade, once. Only when motion is allowed and JS is on. */
 @media (prefers-reduced-motion: no-preference) {
   html.js [data-reveal] {

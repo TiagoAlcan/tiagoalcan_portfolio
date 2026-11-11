@@ -1,6 +1,6 @@
 import { getTranslations } from "next-intl/server";
 
-import { ArrowUpRight, Github, Linkedin, Mail } from "@/components/ui/icons";
+import { ArrowUpRight, Github, Linkedin, Mail, Whatsapp } from "@/components/ui/icons";
 import { buttonStyles, MonoLabel } from "@/components/ui/primitives";
 import { contact } from "@content/site";
 import { CopyEmail } from "./CopyEmail";
@@ -29,6 +29,18 @@ export async function ContactSection() {
           <a href={`mailto:${contact.email}`} className={buttonStyles.primary}>
             <Mail />
             {t("send")}
+          </a>
+          <a
+            href={contact.whatsapp}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex min-h-11 items-center justify-center gap-2 rounded-(--radius-control) border border-on-inverse/45 px-5 text-[0.95rem] font-semibold text-on-inverse transition-colors duration-200 hover:border-on-inverse"
+          >
+            <Whatsapp />
+            {t("whatsapp")}
+            <span className="sr-only">
+              {contact.whatsappDisplay} ({a11y("external")})
+            </span>
           </a>
           <CopyEmail email={contact.email} labels={{ copy: t("copy"), copied: t("copied"), failed: t("copyFailed", { email: contact.email }) }} />
         </div>

@@ -9,6 +9,8 @@ export const contact = {
   email: "tiago.gomesalcan@gmail.com",
   linkedin: "https://www.linkedin.com/in/tiagoalcan",
   github: "https://github.com/TiagoAlcan",
+  whatsapp: "https://wa.me/5511994916015",
+  whatsappDisplay: "+55 11 99491-6015",
 } as const;
 
 /** The résumé PDFs, rendered from docs/cv by docs/cv/build.sh. */

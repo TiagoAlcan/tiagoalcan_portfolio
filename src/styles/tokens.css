@@ -13,6 +13,9 @@
   /* Second colour: structure (labels, bands, timelines). Orange and red stay for action and emphasis. */
   --cobalt: #2a3eb1;
   --cobalt-soft: #93a5ff;
+  /* Alternate section backgrounds: sand in the light theme, slate in the dark one. */
+  --sand: #d4ad8a;
+  --slate: #1d3a47;
 
   /* Semantic tokens, light theme */
   --bg: var(--cream);
@@ -34,6 +37,10 @@
   --tint: color-mix(in srgb, var(--cobalt) 8%, var(--cream));
   --band-bg: var(--cobalt);
   --on-band: var(--cream);
+  --surface-alt: var(--sand);
+  --alt-muted: color-mix(in srgb, var(--deep) 85%, var(--sand));
+  --alt-accent-2: color-mix(in srgb, var(--cobalt) 70%, var(--deep));
+  --alt-accent-text: color-mix(in srgb, var(--red) 45%, var(--deep));
 
   color-scheme: light;
 }
@@ -53,6 +60,10 @@
   --focus: var(--orange);
   --mark-swipe: color-mix(in srgb, var(--orange) 30%, transparent);
   --accent-2: var(--cobalt-soft);
+  --surface-alt: var(--slate);
+  --alt-muted: color-mix(in srgb, var(--cream) 72%, var(--deep));
+  --alt-accent-2: var(--cobalt-soft);
+  --alt-accent-text: color-mix(in srgb, var(--orange) 80%, var(--cream));
   --band-bg: color-mix(in srgb, var(--cobalt) 84%, var(--deep));
   --tint: color-mix(in srgb, var(--cobalt) 38%, var(--deep));
 
@@ -162,4 +173,13 @@
   .logo-cursor {
     animation: none;
   }
+}
+
+/*
+ * The annotation layer re-declares its derived colours inside its own scope,
+ * which sits below :root. The typewriter caret has to be pinned there, or it
+ * falls back to the library's dark-blue ink and disappears on the dark theme.
+ */
+[data-ll-scope] {
+  --ll-caret: var(--site-accent);
 }

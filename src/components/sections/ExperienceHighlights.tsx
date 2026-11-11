@@ -8,8 +8,8 @@ import { cn } from "@/lib/utils";
 import { experience } from "@content/experience";
 
 /**
- * The professional timeline on the home page, set on the cobalt band.
- * Same entries as the Experience page, without the per-period stack.
+ * The working journey as a timeline, oldest first, on the cobalt band.
+ * A rail runs down the side on phones and across the top on wide screens.
  */
 export async function ExperienceHighlights({ locale }: { locale: Locale }) {
   const t = await getTranslations("home");
@@ -17,6 +17,10 @@ export async function ExperienceHighlights({ locale }: { locale: Locale }) {
   const format = await getFormatter();
   const month = (ym: string) =>
     format.dateTime(new Date(`${ym}-15T12:00:00Z`), { month: "short", year: "numeric", timeZone: "UTC" });
+
+  const stops = [...experience].reverse();
+  const node = "absolute top-0 -left-[7px] size-3 rounded-full ring-4 ring-band lg:-top-[7px] lg:left-0";
+  const stop = "relative border-l-2 border-on-band/30 pb-12 pl-6 lg:border-t-2 lg:border-l-0 lg:pt-8 lg:pr-10 lg:pb-0 lg:pl-0";
 
   return (
     <section
@@ -31,34 +35,22 @@ export async function ExperienceHighlights({ locale }: { locale: Locale }) {
         </h2>
         <p className="measure mt-4 text-body-lg text-on-band/85">{e("lead")}</p>
 
-        <ol className="mt-12 grid gap-12 lg:grid-cols-[1.35fr_1fr] lg:gap-0">
-          {experience.map((entry, i) => (
-            <li
-              key={entry.start}
-              className={cn(
-                "border-on-band/25",
-                i === 0 ? "lg:pr-12" : "border-t pt-12 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-12",
-              )}
-              data-reveal
-            >
-              <p className="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[0.85rem] text-on-band/80">
-                <span
-                  aria-hidden="true"
-                  className={cn("size-2.5 rounded-full", entry.end ? "bg-on-band/50" : "status-pulse bg-action")}
-                />
-                <span>
-                  <time dateTime={entry.start}>{month(entry.start)}</time>
-                  <span aria-hidden="true"> → </span>
-                  {entry.end ? <time dateTime={entry.end}>{month(entry.end)}</time> : e("present")}
-                </span>
+        <ol className="mt-12 grid lg:grid-cols-[1fr_1.2fr_0.75fr]">
+          {stops.map((entry) => (
+            <li key={entry.start} className={stop} data-reveal>
+              <span aria-hidden="true" className={cn(node, "bg-on-band")} />
+              <p className="font-mono text-[0.85rem] text-on-band/80 max-lg:-mt-1">
+                <time dateTime={entry.start}>{month(entry.start)}</time>
+                <span aria-hidden="true"> → </span>
+                {entry.end ? <time dateTime={entry.end}>{month(entry.end)}</time> : e("present")}
               </p>
-              <h3 className="mt-3 text-h3 text-on-band">{entry.role[locale]}</h3>
-              <p className="mt-1 text-on-band/75">
+              <h3 className="mt-2 text-h3 text-on-band">{entry.role[locale]}</h3>
+              <p className="mt-1 text-[0.95rem] text-on-band/75">
                 {entry.company} · {entry.mode[locale]}
               </p>
-              <ul className="mt-6 grid gap-3.5">
+              <ul className="mt-5 grid gap-3">
                 {entry.highlights[locale].map((item) => (
-                  <li key={item} className="grid max-w-[62ch] grid-cols-[1.25rem_1fr]">
+                  <li key={item} className="grid max-w-[62ch] grid-cols-[1.25rem_1fr] text-[0.97rem]">
                     <span aria-hidden="true" className="font-mono text-action">
                       →
                     </span>
@@ -68,6 +60,12 @@ export async function ExperienceHighlights({ locale }: { locale: Locale }) {
               </ul>
             </li>
           ))}
+          <li className={cn(stop, "max-lg:border-l-transparent max-lg:pb-0 lg:pr-0")} data-reveal>
+            <span aria-hidden="true" className={cn(node, "status-pulse bg-action")} />
+            <p className="font-mono text-[0.85rem] text-on-band/80 max-lg:-mt-1">{t("timelineNowWhen")}</p>
+            <h3 className="mt-2 text-h3 text-on-band">{t("timelineNowTitle")}</h3>
+            <p className="mt-3 max-w-[40ch] text-[0.97rem] text-on-band/90">{t("timelineNowBody")}</p>
+          </li>
         </ol>
 
         <p className="mt-12">

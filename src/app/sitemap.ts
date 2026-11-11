@@ -9,7 +9,7 @@ type Href = Parameters<typeof getPathname>[0]["href"];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const slugs = await getProjectSlugs();
-  const routes: Href[] = ["/", "/about", "/experience", "/projects", ...slugs.map((slug) => ({ pathname: "/projects/[slug]" as const, params: { slug } }))];
+  const routes: Href[] = ["/", "/about", "/experience", "/projects", "/capabilities", "/certificates", "/demos", "/notes", ...slugs.map((slug) => ({ pathname: "/projects/[slug]" as const, params: { slug } }))];
 
   return routes.flatMap((href) =>
     routing.locales.map((locale) => ({
