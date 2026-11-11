@@ -2,7 +2,7 @@
   "meta": {
     "title": "Tiago Alcântara · Software Engineer",
     "titleTemplate": "%s · Tiago Alcântara",
-    "description": "Software engineer in São Paulo. I make systems visible: software, DevOps and cloud, data and AI, with observability for more than 1 million transactions a day."
+    "description": "Software engineer in São Paulo. Making systems possible and visible: software, DevOps and cloud, data and AI, with observability for more than 1 million transactions a day."
   },
   "a11y": {
     "skip": "Skip to content",
@@ -59,12 +59,13 @@
     "whoami": "whoami",
     "name": "Tiago Alcântara",
     "role": "Software Engineer · São Paulo",
-    "conceptBefore": "I make systems",
-    "conceptMarked": "visible",
+    "conceptBefore": "Making systems",
+    "conceptMarked": "possible and visible",
     "conceptAfter": ".",
-    "intro": "I'm part of the team that operates a payment authorizer handling more than 1 million transactions a day. My role sits on the observability side: the metrics, dashboards and alerts that show what the system is doing.",
+    "intro": "I'm part of the team that maintains and improves a payment authorizer handling more than 1 million transactions a day. I work on production support and continuous improvement alongside the client, and I own the observability side: the metrics, dashboards and alerts that show what the system is doing.",
     "ctaProjects": "See projects",
     "ctaContact": "Get in touch",
+    "ctaEducation": "Academic path",
     "portraitAlt": "Portrait of Tiago Alcântara",
     "experience": "In production since 2023"
   },
@@ -86,10 +87,17 @@
     "aboutLabel": "about",
     "aboutTitle": "Prototype fast, put it in users' hands, adjust from feedback",
     "aboutBody": "That is how I work. Dashboards a client can read without knowing the query, documentation someone else can follow on their own, tests that become the quality bar. I'm currently studying Kubernetes and Terraform in a DevOps and Cloud postgraduate program, and machine learning in a data science bootcamp.",
-    "aboutLink": "More about me"
+    "aboutLink": "More about me",
+    "educationLabel": "education",
+    "educationTitle": "Academic path",
+    "educationLead": "Delivery comes first, but study is what holds each one up. Open a program to see its curriculum and what I took from it.",
+    "educationLink": "See courses, languages and résumé"
   },
   "project": {
-    "status": { "done": "Done", "in-progress": "In progress" },
+    "status": {
+      "done": "Done",
+      "in-progress": "In progress"
+    },
     "stampInProgress": "IN PROGRESS",
     "stampFictional": "MADE-UP DATA",
     "read": "Read the case study",
@@ -118,7 +126,7 @@
   "about": {
     "label": "about",
     "title": "About",
-    "lead": "I'm a software engineer at THCS in São Paulo. One idea ties my work together: make systems visible.",
+    "lead": "I'm a software engineer at THCS in São Paulo. One idea ties my work together: make systems possible and visible.",
     "metaDescription": "Who Tiago Alcântara is, how he works, what his role is today and his education.",
     "whoLabel": "who I am",
     "whoTitle": "Legible to whoever has to decide",
@@ -163,6 +171,13 @@
     "cvPt": "Download in Portuguese",
     "cvEn": "Download in English"
   },
+  "education": {
+    "open": "See curriculum and takeaways",
+    "close": "Close",
+    "curriculum": "Curriculum",
+    "learned": "What I learned",
+    "weeks": "{count, plural, one {# week} other {# weeks}}"
+  },
   "experience": {
     "label": "experience",
     "title": "Experience",
@@ -182,12 +197,22 @@
     "copied": "Copied",
     "copyFailed": "Could not copy. The address is {email}",
     "send": "Write an email",
+    "composeTitle": "Write it right here",
+    "composeHint": "When you send, the message opens ready in your email app. Nothing is sent through this site.",
+    "fieldName": "Your name",
+    "fieldSubject": "Subject",
+    "fieldMessage": "Message",
+    "subjectDefault": "Contact from your portfolio",
+    "signature": "Best regards,",
+    "composeSend": "Open in my email app",
+    "composeCopy": "Copy message",
+    "composeCopied": "Message copied",
+    "composeEmpty": "Write a message before sending.",
     "linkedin": "LinkedIn",
     "github": "GitHub"
   },
   "footer": {
-    "concept": "I make systems visible.",
-    "built": "Built with Next.js. The code and the design documents are public.",
+    "concept": "Making systems possible and visible.",
     "source": "Code on GitHub",
     "top": "Back to top",
     "rights": "Tiago Alcântara"

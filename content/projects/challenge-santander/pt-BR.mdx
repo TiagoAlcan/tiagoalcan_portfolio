@@ -1,0 +1,55 @@
+---
+title: "Dashboard de risco e oportunidades de clientes PJ"
+summary: "Dashboard em Streamlit que classifica saúde financeira, risco e oportunidade de crédito de empresas, com a cadeia de valor de cada uma desenhada em grafo."
+outcome: "Um portfólio PJ inteiro lido em uma tela, com regras que dá para explicar."
+tracks: [data, ai]
+status: done
+role: "Entrega do Challenge da FIAP proposto pelo Santander. O código e o app publicado estão no meu GitHub."
+period: "FIAP · 2025"
+stack: [Python, Streamlit, Pandas, Plotly, Graphviz]
+featured: true
+order: 2
+cover: "art:portfolio"
+coverAlt: "Ilustração de um dashboard com três indicadores, um mapa de blocos de oportunidades por setor e um pequeno grafo de clientes e fornecedores."
+links:
+  - label: "Abrir o dashboard"
+    href: "https://tiagoalcan-challenge-santader.streamlit.app/"
+  - label: "Repositório no GitHub"
+    href: "https://github.com/TiagoAlcan/challenge-santader-streamlit"
+---
+
+<CaseStudy.Context>
+
+O desafio partia de duas bases: uma com faturamento, saldo e setor de cada empresa, outra com as transações entre elas. A pergunta era o que um gerente de carteira PJ consegue decidir olhando para isso.
+
+Uma tabela não responde. Foi preciso juntar as duas bases e dizer, para cada CNPJ, como está a saúde financeira, qual é o risco e onde há oportunidade de crédito.
+
+</CaseStudy.Context>
+
+<CaseStudy.Process>
+
+<CaseStudy.Step title="Regras que dá para explicar">
+A classificação de saúde financeira, nível de risco e oportunidade de crédito é feita por regras. Quem lê o resultado consegue saber <Mark>por que uma empresa caiu em cada faixa</Mark>, o que um modelo opaco não entrega.
+</CaseStudy.Step>
+
+<CaseStudy.Step title="Do portfólio ao CNPJ">
+A visão geral traz indicadores que mudam com os filtros, uma tabela com busca por CNPJ e faixas Ouro, Prata e Bronze. Os gráficos cobrem saúde e risco, a relação entre empresas (intensidade e dependência), um mapa de oportunidades por setor e a dispersão de faturamento por saldo.
+</CaseStudy.Step>
+
+<CaseStudy.Step title="A cadeia de valor como grafo">
+Cada empresa aparece ligada a seus clientes e fornecedores, com cores por risco e marcação de dependência. É a mesma ideia da minha iniciação científica: o risco de uma empresa também mora em quem ela depende.
+</CaseStudy.Step>
+
+<CaseStudy.Step title="Onde a IA entra, e onde não entra">
+Ao comparar dois ou mais CNPJs, o dashboard mostra um parecer textual ao lado das regras. Nesta versão esse parecer é **simulado**: o texto imita o que um modelo de linguagem escreveria, sem chamar um modelo de verdade.
+</CaseStudy.Step>
+
+<Terminal title="terminal" lines={["$ pip install -r requirements.txt", "$ streamlit run santander.py"]} />
+
+</CaseStudy.Process>
+
+<CaseStudy.Result>
+
+O dashboard está publicado e o repositório é público, com as bases do desafio. As regras de classificação e o grafo funcionam com os dados fornecidos; o parecer por IA continua simulado.
+
+</CaseStudy.Result>

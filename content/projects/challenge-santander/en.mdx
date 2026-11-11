@@ -1,0 +1,55 @@
+---
+title: "Risk and opportunity dashboard for business clients"
+summary: "A Streamlit dashboard that classifies the financial health, risk and credit opportunity of companies, with each one's value chain drawn as a graph."
+outcome: "A whole business portfolio read on one screen, with rules you can explain."
+tracks: [data, ai]
+status: done
+role: "Delivered for the FIAP Challenge proposed by Santander. The code and the published app are on my GitHub."
+period: "FIAP · 2025"
+stack: [Python, Streamlit, Pandas, Plotly, Graphviz]
+featured: true
+order: 2
+cover: "art:portfolio"
+coverAlt: "Illustration of a dashboard with three indicators, a block map of opportunities by sector and a small graph of customers and suppliers."
+links:
+  - label: "Open the dashboard"
+    href: "https://tiagoalcan-challenge-santader.streamlit.app/"
+  - label: "Repository on GitHub"
+    href: "https://github.com/TiagoAlcan/challenge-santader-streamlit"
+---
+
+<CaseStudy.Context>
+
+The challenge started from two datasets: one with each company's revenue, balance and sector, another with the transactions between them. The question was what a business-portfolio manager can decide by looking at that.
+
+A table does not answer it. The two datasets had to be joined to say, for each company, how its financial health looks, what the risk is and where there is a credit opportunity.
+
+</CaseStudy.Context>
+
+<CaseStudy.Process>
+
+<CaseStudy.Step title="Rules you can explain">
+Financial health, risk level and credit opportunity are classified by rules. Whoever reads the result can tell <Mark>why a company landed in each band</Mark>, which an opaque model does not give you.
+</CaseStudy.Step>
+
+<CaseStudy.Step title="From the portfolio down to one company">
+The overview has indicators that follow the filters, a table searchable by company ID and Gold, Silver and Bronze tiers. The charts cover health and risk, the relationships between companies (intensity and dependency), a map of opportunities by sector and a scatter of revenue against balance.
+</CaseStudy.Step>
+
+<CaseStudy.Step title="The value chain as a graph">
+Each company is shown linked to its customers and suppliers, colored by risk and marked for dependency. It is the same idea as my undergraduate research: a company's risk also lives in whoever it depends on.
+</CaseStudy.Step>
+
+<CaseStudy.Step title="Where AI comes in, and where it does not">
+When two or more companies are compared, the dashboard shows a written opinion next to the rules. In this version that opinion is **simulated**: the text imitates what a language model would write, without calling a real one.
+</CaseStudy.Step>
+
+<Terminal title="terminal" lines={["$ pip install -r requirements.txt", "$ streamlit run santander.py"]} />
+
+</CaseStudy.Process>
+
+<CaseStudy.Result>
+
+The dashboard is published and the repository is public, with the challenge datasets. The classification rules and the graph work on the data provided; the AI opinion is still simulated.
+
+</CaseStudy.Result>

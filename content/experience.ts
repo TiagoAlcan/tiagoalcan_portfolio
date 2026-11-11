@@ -13,7 +13,7 @@ export type ExperienceEntry = {
 export const experience: ExperienceEntry[] = [
   {
     company: "THCS Desenvolvimento de Software",
-    role: { "pt-BR": "Software Engineer", en: "Software Engineer" },
+    role: { "pt-BR": "Engenheiro de Software", en: "Software Engineer" },
     start: "2025-03",
     end: null,
     mode: { "pt-BR": "Híbrido · São Paulo", en: "Hybrid · São Paulo" },

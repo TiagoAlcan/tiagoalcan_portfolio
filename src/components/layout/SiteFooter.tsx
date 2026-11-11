@@ -16,7 +16,6 @@ export async function SiteFooter() {
             <Logo />
           </span>
           <p className="mt-3 font-display text-[1.15rem] text-heading">{t("concept")}</p>
-          <p className="mt-1 max-w-[52ch] text-[0.9rem] text-fg-muted">{t("built")}</p>
         </div>
         <div className="flex flex-col gap-2 text-[0.9rem] md:items-end">
           <a

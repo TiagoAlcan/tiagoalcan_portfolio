@@ -9,7 +9,7 @@ Cinco cores, definidas pelo Tiago:
 | Creme | `#F2EDD5` | Fundo do tema claro, texto do tema escuro |
 | Vermelho | `#E7390D` | Destaque forte, usado com restrição |
 | Laranja | `#F26716` | Cor de ação e destaque principal |
-| Verde | `#084A24` | Superfícies do tema escuro, títulos do tema claro |
+| Pinho | `#0E3D33` | Superfícies do tema escuro, títulos do tema claro. Substituiu o verde `#084A24` em 2026-11-11: mesmo matiz do verde profundo, menos saturado |
 | Verde profundo | `#04261E` | Fundo do tema escuro, texto do tema claro |
 
 ## 2. Contraste medido

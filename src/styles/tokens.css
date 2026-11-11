@@ -8,7 +8,7 @@
   --cream: #f2edd5;
   --red: #e7390d;
   --orange: #f26716;
-  --green: #084a24;
+  --pine: #0e3d33;
   --deep: #04261e;
 
   /* Semantic tokens, light theme */
@@ -18,12 +18,14 @@
   --on-inverse: var(--cream);
   --text: var(--deep);
   --text-muted: color-mix(in srgb, var(--deep) 72%, var(--cream));
-  --heading: var(--green);
+  --heading: var(--pine);
   --site-accent: var(--red);
+  /* Accent used for small text: pure red is 3.6:1 on cream, this is 5:1. */
+  --accent-text: color-mix(in srgb, var(--red) 80%, var(--deep));
   --action-bg: var(--orange);
   --action-text: var(--deep);
   --site-border: color-mix(in srgb, var(--deep) 16%, transparent);
-  --focus: var(--green);
+  --focus: var(--pine);
   --mark-swipe: color-mix(in srgb, var(--orange) 35%, transparent);
 
   color-scheme: light;
@@ -32,13 +34,14 @@
 /* Dark theme: chosen explicitly, or inherited from the system when no choice is stored. */
 :root.dark {
   --bg: var(--deep);
-  --surface: var(--green);
+  --surface: var(--pine);
   --surface-inverse: var(--cream);
   --on-inverse: var(--deep);
   --text: var(--cream);
   --text-muted: color-mix(in srgb, var(--cream) 72%, var(--deep));
   --heading: var(--cream);
   --site-accent: var(--orange);
+  --accent-text: color-mix(in srgb, var(--orange) 80%, var(--cream));
   --site-border: color-mix(in srgb, var(--cream) 16%, transparent);
   --focus: var(--orange);
   --mark-swipe: color-mix(in srgb, var(--orange) 30%, transparent);
@@ -49,13 +52,14 @@
 @media (prefers-color-scheme: dark) {
   :root:not(.light) {
     --bg: var(--deep);
-    --surface: var(--green);
+    --surface: var(--pine);
     --surface-inverse: var(--cream);
     --on-inverse: var(--deep);
     --text: var(--cream);
     --text-muted: color-mix(in srgb, var(--cream) 72%, var(--deep));
     --heading: var(--cream);
     --site-accent: var(--orange);
+    --accent-text: color-mix(in srgb, var(--orange) 80%, var(--cream));
     --site-border: color-mix(in srgb, var(--cream) 16%, transparent);
     --focus: var(--orange);
     --mark-swipe: color-mix(in srgb, var(--orange) 30%, transparent);
@@ -114,8 +118,8 @@
   --ll-photo: color-mix(in srgb, var(--cream) 55%, white);
   --ll-sticky-yellow: color-mix(in srgb, var(--cream) 82%, var(--orange));
   --ll-sticky-orange: color-mix(in srgb, var(--cream) 62%, var(--orange));
-  --ll-sticky-green: color-mix(in srgb, var(--cream) 80%, var(--green));
-  --ll-green: var(--green);
+  --ll-sticky-green: color-mix(in srgb, var(--cream) 80%, var(--pine));
+  --ll-green: var(--pine);
 }
 
 /* Brand mark. */

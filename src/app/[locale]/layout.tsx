@@ -19,6 +19,9 @@ const fraunces = Fraunces({ subsets: ["latin"], display: "swap", variable: "--fo
 const instrument = Instrument_Sans({ subsets: ["latin"], display: "swap", variable: "--font-instrument" });
 const jetbrains = JetBrains_Mono({ subsets: ["latin"], display: "swap", variable: "--font-jetbrains", weight: ["400", "500", "700"] });
 
+/** Anything that is not a known locale (a stray /favicon.ico, for one) is a 404, not a render. */
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }

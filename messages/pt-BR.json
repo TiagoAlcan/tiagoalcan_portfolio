@@ -2,7 +2,7 @@
   "meta": {
     "title": "Tiago Alcântara · Software Engineer",
     "titleTemplate": "%s · Tiago Alcântara",
-    "description": "Software engineer em São Paulo. Eu torno sistemas visíveis: software, DevOps e cloud, data e AI, com observabilidade para mais de 1 milhão de transações por dia."
+    "description": "Engenheiro de software em São Paulo. Tornando sistemas possíveis e visíveis: software, DevOps e cloud, data e AI, com observabilidade para mais de 1 milhão de transações por dia."
   },
   "a11y": {
     "skip": "Pular para o conteúdo",
@@ -58,13 +58,14 @@
   "hero": {
     "whoami": "whoami",
     "name": "Tiago Alcântara",
-    "role": "Software Engineer · São Paulo",
-    "conceptBefore": "Eu torno sistemas",
-    "conceptMarked": "visíveis",
+    "role": "Engenheiro de Software · São Paulo",
+    "conceptBefore": "Tornando sistemas",
+    "conceptMarked": "possíveis e visíveis",
     "conceptAfter": ".",
-    "intro": "Faço parte do time que opera um autorizador de pagamentos com mais de 1 milhão de transações por dia. Meu papel fica do lado da observabilidade: as métricas, os painéis e os alertas que mostram o que o sistema está fazendo.",
+    "intro": "Faço parte do time que sustenta e evolui um autorizador de pagamentos com mais de 1 milhão de transações por dia. Atuo na sustentação e na melhoria contínua junto ao cliente, e cuido da observabilidade: as métricas, os painéis e os alertas que mostram o que o sistema está fazendo.",
     "ctaProjects": "Ver projetos",
     "ctaContact": "Falar comigo",
+    "ctaEducation": "Jornada acadêmica",
     "portraitAlt": "Retrato de Tiago Alcântara",
     "experience": "Em produção desde 2023"
   },
@@ -86,10 +87,17 @@
     "aboutLabel": "sobre",
     "aboutTitle": "Prototipar rápido, colocar na mão de quem usa, ajustar pelo feedback",
     "aboutBody": "É assim que trabalho. Painéis que um cliente lê sem conhecer a consulta, documentação que outra pessoa executa sozinha, testes que viram o parâmetro de qualidade. Hoje estudo Kubernetes e Terraform em uma pós em DevOps e Cloud, e machine learning em um bootcamp de ciência de dados.",
-    "aboutLink": "Mais sobre mim"
+    "aboutLink": "Mais sobre mim",
+    "educationLabel": "formação",
+    "educationTitle": "Jornada acadêmica",
+    "educationLead": "A entrega vem primeiro, mas é o estudo que sustenta cada uma. Abra uma formação para ver a grade e o que levei dela.",
+    "educationLink": "Ver cursos, idiomas e currículo"
   },
   "project": {
-    "status": { "done": "Concluído", "in-progress": "Em andamento" },
+    "status": {
+      "done": "Concluído",
+      "in-progress": "Em andamento"
+    },
     "stampInProgress": "EM ANDAMENTO",
     "stampFictional": "DADOS FICTÍCIOS",
     "read": "Ler o estudo de caso",
@@ -118,7 +126,7 @@
   "about": {
     "label": "sobre",
     "title": "Sobre",
-    "lead": "Sou engenheiro de software na THCS, em São Paulo. Uma ideia liga meu trabalho: tornar sistemas visíveis.",
+    "lead": "Sou engenheiro de software na THCS, em São Paulo. Uma ideia liga meu trabalho: tornar sistemas possíveis e visíveis.",
     "metaDescription": "Quem é Tiago Alcântara, como trabalha, qual é seu papel hoje e sua formação.",
     "whoLabel": "quem sou",
     "whoTitle": "Legível para quem precisa decidir",
@@ -163,6 +171,13 @@
     "cvPt": "Baixar em português",
     "cvEn": "Baixar em inglês"
   },
+  "education": {
+    "open": "Ver grade e aprendizados",
+    "close": "Fechar",
+    "curriculum": "Grade",
+    "learned": "O que aprendi",
+    "weeks": "{count, plural, one {# semana} other {# semanas}}"
+  },
   "experience": {
     "label": "experiência",
     "title": "Experiência",
@@ -182,12 +197,22 @@
     "copied": "Copiado",
     "copyFailed": "Não foi possível copiar. O endereço é {email}",
     "send": "Escrever e-mail",
+    "composeTitle": "Escreva aqui mesmo",
+    "composeHint": "Ao enviar, a mensagem abre pronta no seu aplicativo de e-mail. Nada é enviado por este site.",
+    "fieldName": "Seu nome",
+    "fieldSubject": "Assunto",
+    "fieldMessage": "Mensagem",
+    "subjectDefault": "Contato pelo portfólio",
+    "signature": "Atenciosamente,",
+    "composeSend": "Abrir no meu e-mail",
+    "composeCopy": "Copiar mensagem",
+    "composeCopied": "Mensagem copiada",
+    "composeEmpty": "Escreva a mensagem antes de enviar.",
     "linkedin": "LinkedIn",
     "github": "GitHub"
   },
   "footer": {
-    "concept": "Eu torno sistemas visíveis.",
-    "built": "Feito com Next.js. O código e os documentos de design são públicos.",
+    "concept": "Tornando sistemas possíveis e visíveis.",
     "source": "Código no GitHub",
     "top": "Voltar ao topo",
     "rights": "Tiago Alcântara"

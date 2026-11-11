@@ -19,7 +19,7 @@ const keys = (obj: object, prefix = ""): string[] =>
 
 describe("project content", () => {
   it("has the eight planned projects", () => {
-    expect(slugs).toHaveLength(10);
+    expect(slugs).toHaveLength(11);
   });
 
   it.each(slugs)("%s has valid frontmatter in both languages", (slug) => {

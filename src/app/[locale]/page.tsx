@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Suspense } from "react";
 
+import { EducationJourney } from "@/components/sections/EducationJourney";
 import { Hero } from "@/components/sections/Hero";
 import { StackMarquee } from "@/components/sections/StackMarquee";
 import { StatStrip } from "@/components/sections/StatStrip";
@@ -46,6 +47,25 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
           <p className="mt-10">
             <Link href="/projects" className={buttonStyles.text}>
               {t("allProjects")}
+              <ArrowRight />
+            </Link>
+          </p>
+        </div>
+      </Section>
+
+      <Section id="education" aria-labelledby="education-title" className="scroll-mt-20 border-t border-edge bg-surface">
+        <div className="shell">
+          <MonoLabel>{t("educationLabel")}</MonoLabel>
+          <h2 id="education-title" className="mt-3 text-h2 text-heading">
+            {t("educationTitle")}
+          </h2>
+          <p className="measure mt-4 text-body-lg">{t("educationLead")}</p>
+          <div className="mt-10">
+            <EducationJourney locale={locale} cardClassName="bg-page" />
+          </div>
+          <p className="mt-8">
+            <Link href={{ pathname: "/about", hash: "education" }} className={buttonStyles.text}>
+              {t("educationLink")}
               <ArrowRight />
             </Link>
           </p>
