@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 /** Section label in the `01 / contexto` format. */
 export function MonoLabel({ index, children, className }: { index?: string; children: ReactNode; className?: string }) {
   return (
-    <p className={cn("mono-label text-fg-muted", className)}>
+    <p className={cn("mono-label text-accent2", className)}>
       {index ? (
         <>
           <span className="text-brand">{index}</span>

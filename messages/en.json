@@ -91,7 +91,9 @@
     "educationLabel": "education",
     "educationTitle": "Academic path",
     "educationLead": "Delivery comes first, but study is what holds each one up. Open a program to see its curriculum and what I took from it.",
-    "educationLink": "See courses, languages and résumé"
+    "experienceLabel": "experience",
+    "experienceTitle": "Professional experience",
+    "experienceLink": "See the full timeline"
   },
   "project": {
     "status": {

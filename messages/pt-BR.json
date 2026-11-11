@@ -91,7 +91,9 @@
     "educationLabel": "formação",
     "educationTitle": "Jornada acadêmica",
     "educationLead": "A entrega vem primeiro, mas é o estudo que sustenta cada uma. Abra uma formação para ver a grade e o que levei dela.",
-    "educationLink": "Ver cursos, idiomas e currículo"
+    "experienceLabel": "experiência",
+    "experienceTitle": "Experiência profissional",
+    "experienceLink": "Ver a linha do tempo completa"
   },
   "project": {
     "status": {

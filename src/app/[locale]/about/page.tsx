@@ -2,20 +2,14 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { Curiosities } from "@/components/sections/Curiosities";
+import { EducationExtras } from "@/components/sections/EducationExtras";
 import { EducationJourney } from "@/components/sections/EducationJourney";
 import { PageIntro } from "@/components/sections/PageIntro";
-import { Download } from "@/components/ui/icons";
-import {
-  buttonStyles,
-  MonoLabel,
-  Section,
-  Tag,
-} from "@/components/ui/primitives";
+import { MonoLabel, Section } from "@/components/ui/primitives";
 import { Underline } from "@/components/ui/underline";
 import type { Locale } from "@/i18n/routing";
 import { alternatesFor } from "@/lib/seo/metadata";
-import { shortCourses } from "@content/education";
-import { languages, resume, stackByArea } from "@content/site";
+import { stackByArea } from "@content/site";
 
 export async function generateMetadata({
   params,
@@ -199,54 +193,8 @@ export default async function AboutPage({
             <EducationJourney locale={locale} cardClassName="bg-page" />
           </div>
 
-          <div className="mt-14 grid gap-10 md:grid-cols-3">
-            <div>
-              <h3 className="text-h3 text-heading">{t("shortCoursesTitle")}</h3>
-              <ul className="mt-4 flex flex-wrap gap-2">
-                {shortCourses.map((c) => (
-                  <li key={c}>
-                    <Tag className="bg-page">{c}</Tag>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-h3 text-heading">{t("languagesTitle")}</h3>
-              <ul className="mt-4 grid gap-1.5">
-                {languages.map((l) => (
-                  <li key={l.name.en}>
-                    <span className="font-semibold">{l.name[locale]}</span>
-                    <span className="text-fg-muted"> · {l.level[locale]}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-h3 text-heading">{t("cvTitle")}</h3>
-              <p className="mt-3 max-w-[48ch] text-[0.95rem] text-fg-muted">
-                {t("cvBody")}
-              </p>
-              <div className="mt-4 flex flex-wrap gap-3">
-                {(locale === "en"
-                  ? (["en", "pt-BR"] as const)
-                  : (["pt-BR", "en"] as const)
-                ).map((lang, i) => (
-                  <a
-                    key={lang}
-                    href={resume[lang]}
-                    download
-                    hrefLang={lang}
-                    className={
-                      i === 0 ? buttonStyles.primary : buttonStyles.secondary
-                    }
-                  >
-                    <Download />
-                    {t(lang === "en" ? "cvEn" : "cvPt")}
-                    <span className="sr-only"> (PDF)</span>
-                  </a>
-                ))}
-              </div>
-            </div>
+          <div className="mt-14 border-t border-edge pt-12">
+            <EducationExtras locale={locale} />
           </div>
         </div>
       </Section>

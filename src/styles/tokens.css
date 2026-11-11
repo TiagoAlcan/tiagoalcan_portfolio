@@ -1,5 +1,5 @@
 /*
- * Design tokens. The five palette hex values live here and nowhere else.
+ * Design tokens. The palette hex values live here and nowhere else.
  * See docs/01-design-system.md, chapters 1 to 3 and 10.
  */
 
@@ -10,6 +10,9 @@
   --orange: #f26716;
   --pine: #0e3d33;
   --deep: #04261e;
+  /* Second colour: structure (labels, bands, timelines). Orange and red stay for action and emphasis. */
+  --cobalt: #2a3eb1;
+  --cobalt-soft: #93a5ff;
 
   /* Semantic tokens, light theme */
   --bg: var(--cream);
@@ -27,6 +30,10 @@
   --site-border: color-mix(in srgb, var(--deep) 16%, transparent);
   --focus: var(--pine);
   --mark-swipe: color-mix(in srgb, var(--orange) 35%, transparent);
+  --accent-2: var(--cobalt);
+  --tint: color-mix(in srgb, var(--cobalt) 8%, var(--cream));
+  --band-bg: var(--cobalt);
+  --on-band: var(--cream);
 
   color-scheme: light;
 }
@@ -45,6 +52,9 @@
   --site-border: color-mix(in srgb, var(--cream) 16%, transparent);
   --focus: var(--orange);
   --mark-swipe: color-mix(in srgb, var(--orange) 30%, transparent);
+  --accent-2: var(--cobalt-soft);
+  --band-bg: color-mix(in srgb, var(--cobalt) 84%, var(--deep));
+  --tint: color-mix(in srgb, var(--cobalt) 38%, var(--deep));
 
   color-scheme: dark;
 }
@@ -63,6 +73,9 @@
     --site-border: color-mix(in srgb, var(--cream) 16%, transparent);
     --focus: var(--orange);
     --mark-swipe: color-mix(in srgb, var(--orange) 30%, transparent);
+    --accent-2: var(--cobalt-soft);
+    --band-bg: color-mix(in srgb, var(--cobalt) 84%, var(--deep));
+    --tint: color-mix(in srgb, var(--cobalt) 38%, var(--deep));
 
     color-scheme: dark;
   }

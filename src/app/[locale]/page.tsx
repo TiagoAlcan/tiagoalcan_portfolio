@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Suspense } from "react";
 
+import { EducationExtras } from "@/components/sections/EducationExtras";
 import { EducationJourney } from "@/components/sections/EducationJourney";
+import { ExperienceHighlights } from "@/components/sections/ExperienceHighlights";
 import { Hero } from "@/components/sections/Hero";
 import { StackMarquee } from "@/components/sections/StackMarquee";
 import { StatStrip } from "@/components/sections/StatStrip";
@@ -63,14 +65,13 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
           <div className="mt-10">
             <EducationJourney locale={locale} cardClassName="bg-page" />
           </div>
-          <p className="mt-8">
-            <Link href={{ pathname: "/about", hash: "education" }} className={buttonStyles.text}>
-              {t("educationLink")}
-              <ArrowRight />
-            </Link>
-          </p>
+          <div className="mt-14 border-t border-edge pt-12">
+            <EducationExtras locale={locale} />
+          </div>
         </div>
       </Section>
+
+      <ExperienceHighlights locale={locale} />
 
       <StatStrip />
 

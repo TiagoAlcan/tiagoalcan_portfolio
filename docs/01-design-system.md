@@ -56,12 +56,20 @@ Os componentes usam apenas tokens semânticos. Nenhum hex aparece fora de `token
 | `--action-text` | Verde profundo | Verde profundo | Texto do botão principal |
 | `--border` | Verde profundo a 16% | Creme a 16% | Divisórias |
 | `--focus` | Verde | Laranja | Anel de foco |
+| `--accent-2` | Cobalto `#2a3eb1` | Cobalto claro `#93a5ff` | Segunda cor, de estrutura: rótulos de seção, ícones das trilhas, marcadores |
+| `--band-bg` | Cobalto | Cobalto a 84% sobre verde profundo | Faixa de seção em cor cheia (experiência na página inicial) |
+| `--on-band` | Creme | Creme | Texto sobre a faixa |
+| `--tint` | Cobalto a 8% sobre creme | Cobalto a 38% sobre verde profundo | Fundo de cartão em destaque (currículo) |
 
 Os valores com transparência são gerados com `color-mix()` e **precisam ter o contraste medido na implementação**: `--text-muted` tem de ficar em 4,5 ou mais sobre `--bg` e sobre `--surface`. Se não ficar, a porcentagem sobe.
 
+### Segunda cor: cobalto
+
+O cobalto entrou para dar mais cor sem ampliar o uso do verde. A regra de divisão: **cobalto é estrutura** (rótulos, faixas, marcadores) e **laranja e vermelho continuam sendo ação e ênfase** (botões, sublinhados, anotações). Contrastes medidos: cobalto sobre creme 7,37; creme sobre a faixa 7,37 no claro e 8,32 no escuro; cobalto claro sobre verde profundo 6,97 e sobre verde 5,23. Laranja sobre cobalto fica em 2,78, então na faixa o laranja é só decoração (setas, ponto de status, sublinhado).
+
 ### Cores por trilha
 
-As quatro trilhas não ganham cores novas, porque a paleta só tem cinco. Elas se distinguem por **ícone e rótulo**, e o botão ativo usa `--action-bg`. Isso mantém a identidade e evita depender de cor para diferenciar.
+As quatro trilhas não ganham cores novas, porque a paleta é curta de propósito. Elas se distinguem por **ícone e rótulo**, e o botão ativo usa `--action-bg`. Isso mantém a identidade e evita depender de cor para diferenciar.
 
 ## 4. Tipografia
 
