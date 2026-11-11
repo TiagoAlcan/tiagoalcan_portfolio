@@ -1,0 +1,55 @@
+---
+title: "clone-tabnews: the foundation of a web project, built carefully"
+summary: "An implementation of TabNews for curso.dev. So far, the foundation: a pinned Node version, a code standard, tests configured and the first page live."
+outcome: "In progress: project foundation ready and published on Vercel."
+tracks: [software]
+status: in-progress
+role: "Individual project, following curso.dev."
+period: "2025"
+stack: [Next.js, React, Node.js, Jest, Prettier, Vercel]
+featured: true
+order: 6
+cover: "art:scaffold"
+coverAlt: "Illustration of a project file tree next to a checklist: Node version, formatting and tests."
+links:
+  - label: "Open the published page"
+    href: "https://clone-tabnews-five-orcin.vercel.app"
+  - label: "Repository on GitHub"
+    href: "https://github.com/TiagoAlcan/clone-tabnews"
+---
+
+<CaseStudy.Context>
+
+[TabNews](https://www.tabnews.com.br) is a Brazilian site with content for people who work in programming and technology: the community posts, comments and debates, and the code is open source. This repository is my implementation of it for curso.dev. The point is not only reaching the product: it is setting the project up the way a team would, one decision at a time, each recorded in a commit.
+
+This repository is at the start of that path, and that is what this page shows.
+
+</CaseStudy.Context>
+
+<CaseStudy.Process>
+
+<CaseStudy.Step title="The same Node version for everyone">
+An `.nvmrc` file pins the Node LTS version. Whoever clones the project runs the same environment, with no "works on my machine".
+</CaseStudy.Step>
+
+<CaseStudy.Step title="A code standard before the code">
+`.editorconfig` and Prettier come in early, with scripts to <Mark>check and fix formatting</Mark>. Style debates stop showing up in review.
+</CaseStudy.Step>
+
+<Terminal title="package.json" lines={["$ npm run dev", "$ npm run lint:check", "$ npm run lint:fix", "$ npm test"]} />
+
+<CaseStudy.Step title="Tests ready for what comes next">
+Jest is installed and the test scripts are configured before the first business rule exists.
+</CaseStudy.Step>
+
+<CaseStudy.Step title="Live from day one">
+The home page, in Next.js, is published on Vercel. Publishing early takes deployment off the list of end-of-project surprises.
+</CaseStudy.Step>
+
+</CaseStudy.Process>
+
+<CaseStudy.Result>
+
+What exists today is the foundation: environment, code standard, configured tests and a published page. The TabNews features have not been implemented yet.
+
+</CaseStudy.Result>

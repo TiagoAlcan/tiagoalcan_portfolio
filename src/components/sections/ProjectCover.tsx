@@ -636,6 +636,26 @@ const art: Record<string, React.ReactNode> = {
       <circle cx="258" cy="96" r="11" fill={ACCENT} />
     </>
   ),
+  scaffold: (
+    <>
+      <rect x="24" y="26" width="132" height="148" rx="6" fill="var(--bg)" stroke={INK} strokeOpacity="0.45" strokeWidth="1.2" />
+      {[".nvmrc", ".editorconfig", ".prettierignore", "package.json", "pages/", "  index.js"].map((label, i) => (
+        <text key={label} x="38" y={50 + i * 21} {...mono} fill={INK} opacity={i === 5 ? 1 : 0.7} xmlSpace="preserve">
+          {label}
+        </text>
+      ))}
+      <rect x="32" y="143" width="116" height="18" rx="3" fill={ACCENT} opacity="0.16" />
+      {["node lts", "prettier", "jest"].map((label, i) => (
+        <g key={label} transform={`translate(178 ${52 + i * 44})`}>
+          <rect width="118" height="32" rx="6" {...LINE} />
+          <path d="M12 16l5 5 9-10" fill="none" stroke={ACCENT} strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+          <text x="38" y="20" {...mono} fill={INK}>
+            {label}
+          </text>
+        </g>
+      ))}
+    </>
+  ),
   chart: (
     <>
       {["raw", "processed", "curated"].map((label, i) => (

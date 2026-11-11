@@ -72,6 +72,7 @@ Projetos com `confidential: true` exibem, logo abaixo do topo, a frase: *"Os dad
 | `testes-bdd` | Documentação de testes em BDD | Software | não | sim | Exemplo de cenário fictício |
 | `projeto-restart` | Da API e do scraping ao dashboard | Data | não | não | Gravação do dashboard; repositório público |
 | `challenge-santander` | Dashboard de risco e oportunidades de clientes PJ | Data, AI | sim | não | Ilustração; app publicado e repositório público |
+| `clone-tabnews` | A base de um projeto web feita com calma | Software | sim | não | Ilustração; página publicada e repositório público |
 | `teste-carga-dimensionamento` | Do teste de carga ao tamanho do servidor | DevOps, Software | não | sim | Ilustração; só a conclusão é pública |
 | `padronizacao-deploys` | Deploys padronizados com Git e Docker Hub | DevOps | não | sim | Ilustração e comando fictício |
 
