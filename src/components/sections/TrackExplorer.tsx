@@ -59,7 +59,7 @@ export function TrackExplorerView({ projects, copy, active, onSelect, columns = 
               <span
                 className={cn(
                   "flex size-16 items-center justify-center rounded-full border text-[1.5rem] transition-[background-color,border-color,transform,color] duration-200 ease-(--ease-out-soft) group-hover/track:-translate-y-0.5 sm:size-[4.5rem]",
-                  pressed ? "border-action bg-action text-on-action" : "border-accent2/45 bg-tint text-accent2 group-hover/track:border-accent2",
+                  pressed ? "border-action bg-action text-on-action" : "border-fg/35 bg-page text-fg group-hover/track:border-fg",
                 )}
               >
                 <Icon />

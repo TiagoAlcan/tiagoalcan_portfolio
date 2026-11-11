@@ -35,7 +35,7 @@ export default async function CertificatesPage({ params }: Props) {
             {certificates.map((cert) => (
               <li key={cert.credentialId} className="flex flex-col rounded-(--radius-card) border border-edge bg-surface p-5" data-reveal>
                 <p className="flex items-center justify-between gap-3 font-mono text-[0.78rem] text-fg-muted">
-                  <Tag className="border-accent2/40 bg-tint text-accent2">{cert.issuer}</Tag>
+                  <Tag className="bg-page">{cert.issuer}</Tag>
                   <time dateTime={cert.issued}>{month(cert.issued)}</time>
                 </p>
                 <h2 className="mt-4 font-display text-[1.3rem] leading-tight font-medium text-heading">{cert.title}</h2>
@@ -58,7 +58,7 @@ export default async function CertificatesPage({ params }: Props) {
             ))}
           </ul>
 
-          <p className="measure mt-12 border-l-2 border-accent2 pl-4 text-[0.95rem] text-fg-muted">{certificateIssuerNote[locale]}</p>
+          <p className="measure mt-12 border-l-2 border-brand pl-4 text-[0.95rem] text-fg-muted">{certificateIssuerNote[locale]}</p>
           <p className="mt-6">
             <a href={certificatesSource} target="_blank" rel="noreferrer" className={buttonStyles.secondary}>
               {t("all")}

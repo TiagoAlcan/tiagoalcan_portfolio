@@ -10,7 +10,7 @@ export function Terminal({ title, lines, className }: { title: string; lines: st
         <span aria-hidden="true" className="flex gap-1.5">
           <span className="size-2.5 rounded-full bg-(--red)" />
           <span className="size-2.5 rounded-full bg-(--orange)" />
-          <span className="size-2.5 rounded-full bg-(--cobalt-soft)" />
+          <span className="size-2.5 rounded-full bg-(--cream)/50" />
         </span>
         {title}
       </figcaption>
@@ -46,12 +46,12 @@ export function NoDataPanel({ metric, range, empty, query, note }: { metric: str
           {[20, 50, 80, 110].map((y) => (
             <line key={y} x1="0" x2="400" y1={y} y2={y} stroke="var(--site-border)" strokeDasharray="3 5" />
           ))}
-          <line x1="0" x2="400" y1="128" y2="128" stroke="var(--accent-2)" strokeWidth="2.5" vectorEffect="non-scaling-stroke" />
+          <line x1="0" x2="400" y1="128" y2="128" stroke="var(--site-accent)" strokeWidth="2.5" vectorEffect="non-scaling-stroke" />
         </svg>
         <p className="absolute inset-0 flex items-center justify-center font-display text-[1.6rem] text-heading">{empty}</p>
       </div>
       <p className="mt-3 font-mono text-[0.78rem] break-words text-fg-muted">
-        <span className="text-accent2">{query}</span> · {note}
+        <span className="text-fg">{query}</span> · {note}
       </p>
     </figure>
   );

@@ -56,21 +56,25 @@ Os componentes usam apenas tokens semânticos. Nenhum hex aparece fora de `token
 | `--action-text` | Verde profundo | Verde profundo | Texto do botão principal |
 | `--border` | Verde profundo a 16% | Creme a 16% | Divisórias |
 | `--focus` | Verde | Laranja | Anel de foco |
-| `--accent-2` | Cobalto `#2a3eb1` | Cobalto claro `#93a5ff` | Segunda cor, de estrutura: rótulos de seção, ícones das trilhas, marcadores |
-| `--band-bg` | Cobalto | Cobalto a 84% sobre verde profundo | Faixa de seção em cor cheia (experiência na página inicial) |
-| `--on-band` | Creme | Creme | Texto sobre a faixa |
-| `--tint` | Cobalto a 8% sobre creme | Cobalto a 38% sobre verde profundo | Fundo de cartão em destaque (currículo) |
 | `--surface-alt` | Areia `#d4ad8a` | Ardósia `#1d3a47` | Fundo alternativo de seção: números da página inicial, rodapé, skills em Capacidades, páginas de demos e notas |
 
 Os valores com transparência são gerados com `color-mix()` e **precisam ter o contraste medido na implementação**: `--text-muted` tem de ficar em 4,5 ou mais sobre `--bg` e sobre `--surface`. Se não ficar, a porcentagem sobe.
 
-### Segunda cor: cobalto
-
-O cobalto entrou para dar mais cor sem ampliar o uso do verde. A regra de divisão: **cobalto é estrutura** (rótulos, faixas, marcadores) e **laranja e vermelho continuam sendo ação e ênfase** (botões, sublinhados, anotações). Contrastes medidos: cobalto sobre creme 7,37; creme sobre a faixa 7,37 no claro e 8,32 no escuro; cobalto claro sobre verde profundo 6,97 e sobre verde 5,23. Laranja sobre cobalto fica em 2,78, então na faixa o laranja é só decoração (setas, ponto de status, sublinhado).
-
 ### Fundo alternativo: areia e ardósia
 
-A classe `.surface-alt` aplica `--surface-alt` e, junto, troca as cores de texto pequeno, porque as da página não chegam a 4,5 sobre areia. Medido sobre areia: verde profundo 7,80; verde (títulos) 5,85; texto de apoio (verde profundo a 85%) 5,89; cobalto escurecido a 70% 5,23. Sobre ardósia: creme 10,21; texto de apoio 5,71; cobalto claro 5,19; laranja a 80% 4,59. O texto de apoio padrão (3,41) e o cobalto puro (4,19) **não** podem ser usados sobre areia fora dessa classe.
+`--surface-alt` é areia `#d4ad8a` no tema claro e ardósia `#1d3a47` no tema escuro. A classe `.surface-alt` aplica o fundo e ajusta as cores de texto pequeno, porque as da página não chegam a 4,5 sobre areia. Medido sobre areia: verde profundo 7,80; verde (títulos) 5,85; texto de apoio (verde profundo a 85%) 5,89. Sobre ardósia: creme 10,21; texto de apoio 5,71; laranja a 80% 4,59. O texto de apoio padrão (3,41) **não** pode ser usado sobre areia fora dessa classe.
+
+### Regras de cor decididas pelo dono do site (nov. 2026)
+
+Estas regras vieram de revisão direta e valem para qualquer tela nova. Antes de propor cor, leia esta lista.
+
+1. **O claro é claro e o escuro é escuro.** No tema claro os fundos são claros (creme, creme escurecido, areia); no tema escuro são escuros (verde profundo, verde, ardósia). Não se misturam blocos escuros no tema claro nem claros no escuro.
+2. **Exceções de inversão, e só estas:** o cartão de currículo (escuro no claro, claro no escuro), que é o destaque da formação, e a seção de contato, que já era invertida desde a primeira versão. Nenhum outro bloco usa `--surface-inverse` sem pedido.
+3. **Azul não é cor de fundo de cartão, ícone, etiqueta ou botão.** O único azul do site é a ardósia `#1d3a47`, e só como fundo de **seção inteira** no tema escuro. O azul-cobalto (`#2a3eb1`) foi testado e reprovado: não volta.
+4. **Texto segue o padrão original.** Texto principal em `--text`, apoio em `--text-muted`, títulos em `--heading`, rótulos de seção em `--text-muted`. Destaque em texto só com `--accent-text` (vermelho no claro, laranja no escuro). Nenhuma cor nova para escrever.
+5. **Sequência de fundos entre seções.** Seções vizinhas não repetem o mesmo fundo, e a troca é sempre para um tom próximo: página, superfície, página, alternativo. O fundo alternativo aparece no máximo uma vez por página além do rodapé.
+6. **Diversão vem do conteúdo e dos objetos de papel** (carimbo, post-it, terminal, anotação à mão), não de cor nova. Uma brincadeira por página, sem empilhar efeitos.
+7. **Não criar seção, página ou componente que não foi pedido.** Na dúvida, perguntar antes.
 
 ### Cores por trilha
 

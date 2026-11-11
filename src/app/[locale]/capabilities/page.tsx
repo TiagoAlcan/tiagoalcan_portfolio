@@ -40,14 +40,14 @@ export default async function CapabilitiesPage({ params }: Props) {
             return (
               <article key={cap.track} className="flex flex-col rounded-(--radius-card) border border-edge bg-surface p-6 md:p-8" data-reveal>
                 <div className="flex items-center gap-4">
-                  <span className="flex size-12 shrink-0 items-center justify-center rounded-full border border-accent2/45 bg-tint text-[1.3rem] text-accent2">
+                  <span className="flex size-12 shrink-0 items-center justify-center rounded-full border border-fg/35 bg-page text-[1.3rem] text-fg">
                     <Icon />
                   </span>
                   <h2 className="text-h3 text-heading">{tracks[cap.track].label[locale]}</h2>
                 </div>
-                <h3 className="mt-6 font-mono text-[0.78rem] text-accent2">{t("problem")}</h3>
+                <h3 className="mt-6 font-mono text-[0.78rem] text-fg-muted">{t("problem")}</h3>
                 <p className="mt-1.5">{cap.problem[locale]}</p>
-                <h3 className="mt-6 font-mono text-[0.78rem] text-accent2">{t("builds")}</h3>
+                <h3 className="mt-6 font-mono text-[0.78rem] text-fg-muted">{t("builds")}</h3>
                 <ul className="mt-2 grid gap-2">
                   {cap.builds[locale].map((item) => (
                     <li key={item} className="grid grid-cols-[1.25rem_1fr]">

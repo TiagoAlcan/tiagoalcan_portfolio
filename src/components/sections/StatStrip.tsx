@@ -12,7 +12,7 @@ export async function StatStrip() {
   const locale = (await getLocale()) as Locale;
 
   return (
-    <section aria-labelledby="stats-title" className="surface-alt border-y border-edge">
+    <section aria-labelledby="stats-title" className="border-y border-edge bg-surface">
       <div className="shell py-14 md:py-20">
         <MonoLabel>
           <span id="stats-title">{t("statsLabel")}</span>

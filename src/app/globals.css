@@ -17,10 +17,6 @@
   --color-on-action: var(--action-text);
   --color-edge: var(--site-border);
   --color-focus-ring: var(--focus);
-  --color-accent2: var(--accent-2);
-  --color-tint: var(--tint);
-  --color-band: var(--band-bg);
-  --color-on-band: var(--on-band);
 
   --font-sans: var(--font-instrument), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
@@ -143,7 +139,6 @@
 .surface-alt {
   background-color: var(--surface-alt);
   --text-muted: var(--alt-muted);
-  --accent-2: var(--alt-accent-2);
   --accent-text: var(--alt-accent-text);
 }
 

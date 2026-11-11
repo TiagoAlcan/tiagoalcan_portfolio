@@ -6,6 +6,9 @@ import type { Locale } from "@/i18n/routing";
 import { shortCourses } from "@content/education";
 import { languages, resume } from "@content/site";
 
+const inverseSecondary =
+  "inline-flex min-h-11 items-center justify-center gap-2 rounded-(--radius-control) border border-on-inverse/45 px-5 text-[0.95rem] font-semibold text-on-inverse transition-colors duration-200 hover:border-on-inverse";
+
 /** Short courses, languages and the résumé downloads. Shared by the home and About pages. */
 export async function EducationExtras({ locale }: { locale: Locale }) {
   const t = await getTranslations("about");
@@ -26,22 +29,19 @@ export async function EducationExtras({ locale }: { locale: Locale }) {
 
       <div>
         <h3 className="text-h3 text-heading">{t("languagesTitle")}</h3>
-        <ul className="mt-4 grid gap-2.5">
+        <ul className="mt-4 grid gap-1.5">
           {languages.map((l) => (
-            <li key={l.name.en} className="flex items-baseline gap-2.5">
-              <span aria-hidden="true" className="size-2 shrink-0 translate-y-[-1px] rounded-full bg-accent2" />
-              <span>
-                <span className="font-semibold">{l.name[locale]}</span>
-                <span className="text-fg-muted"> · {l.level[locale]}</span>
-              </span>
+            <li key={l.name.en}>
+              <span className="font-semibold">{l.name[locale]}</span>
+              <span className="text-fg-muted"> · {l.level[locale]}</span>
             </li>
           ))}
         </ul>
       </div>
 
-      <div className="rounded-(--radius-card) border border-accent2/30 bg-tint p-6 md:col-span-2 lg:col-span-1">
-        <h3 className="text-h3 text-heading">{t("cvTitle")}</h3>
-        <p className="mt-3 max-w-[48ch] text-[0.95rem] text-fg-muted">{t("cvBody")}</p>
+      <div className="rounded-(--radius-card) bg-inverse p-6 text-on-inverse [--focus:var(--orange)] md:col-span-2 lg:col-span-1">
+        <h3 className="text-h3 text-on-inverse">{t("cvTitle")}</h3>
+        <p className="mt-3 max-w-[48ch] text-[0.95rem] text-on-inverse/80">{t("cvBody")}</p>
         <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap lg:flex-col xl:flex-row">
           {order.map((lang, i) => (
             <a
@@ -49,7 +49,7 @@ export async function EducationExtras({ locale }: { locale: Locale }) {
               href={resume[lang]}
               download
               hrefLang={lang}
-              className={i === 0 ? buttonStyles.primary : buttonStyles.secondary}
+              className={i === 0 ? buttonStyles.primary : inverseSecondary}
             >
               <Download />
               {t(lang === "en" ? "cvEn" : "cvPt")}

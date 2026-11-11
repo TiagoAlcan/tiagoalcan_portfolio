@@ -8,7 +8,7 @@ import { skills, type SkillLevel } from "@content/skills";
 
 const levelStyle: Record<SkillLevel, string> = {
   work: "bg-action text-on-action",
-  both: "bg-accent2 text-page",
+  both: "bg-inverse text-on-inverse",
   project: "border border-fg/40 text-fg",
 };
 
