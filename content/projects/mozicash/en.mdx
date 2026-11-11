@@ -1,0 +1,63 @@
+---
+title: "MoziCash: personal finance with an AI agent"
+summary: "A personal finance app that answers one question: how much can I still spend this month? Expenses are logged by voice or text, in seconds."
+outcome: "One number on the home screen answers the question. No spreadsheet."
+tracks: [software, ai]
+status: done
+role: "Personal project. I built the whole product: interface, API, database and the AI model integration."
+period: "2026"
+stack: [React, Tailwind, Python, FastAPI, Supabase, PostgreSQL, Google Gemini, Vercel]
+featured: true
+order: 1
+cover: /projects/mozicash/cover.webp
+coverAlt: "MoziCash summary screen showing how much can still be spent this month, with demo data."
+links:
+  - label: "Open the app"
+    href: "https://mozicash.vercel.app"
+---
+
+<CaseStudy.Context>
+
+People who try to organize their money tend to stall at the same step: writing down every expense is a chore, and the spreadsheet is abandoned by week two. Without the log, the question that matters goes unanswered: **how much can I still spend this month?**
+
+MoziCash is a personal project **inspired by my capstone project**, and the two are not the same thing. In the capstone, a goal-oriented finance app with a personal AI agent, I led the team, set the development practices and organized deliveries by priority. MoziCash picks the idea up with a narrower cut: fewer screens and one central question.
+
+</CaseStudy.Context>
+
+<CaseStudy.Process>
+
+<CaseStudy.Step title="One question, one number">
+The home screen is built around a single value: <Mark>what is still left to spend until the end of the month</Mark>, with fixed costs and logged expenses already taken out. Everything else on the screen is there to explain that number, not to compete with it.
+</CaseStudy.Step>
+
+<Shot src="/projects/mozicash/resumo.webp" width={1600} height={1533} alt="MoziCash summary screen: the available amount up front, the split between fixed and variable spending, and the month's chart. The interface is in Portuguese." caption="The number first, the explanation after." />
+
+<CaseStudy.Step title="Logging has to be faster than forgetting">
+An expense is spoken or typed the way a person would say it, like "lunch 32 reais at the office restaurant". The AI model extracts title, date, amount and category and fills in the form.
+</CaseStudy.Step>
+
+<CaseStudy.Step title="A human in control">
+The AI never saves anything on its own. It fills in the fields, says the content was interpreted and waits for the person to review and confirm. This was the decision that weighed the most: one wrong entry saved silently would destroy trust in the number on the home screen.
+</CaseStudy.Step>
+
+<Shot src="/projects/mozicash/chat.webp" width={1600} height={1203} alt="MoziCash new entry form, filled in by the AI from the typed sentence and waiting for confirmation. The interface is in Portuguese." caption="The AI fills it in. The person saves it." />
+
+<CaseStudy.Step title="Limits and where to save">
+Each category can have a limit, with an alert as it gets close, and one screen points to where there is room to save.
+</CaseStudy.Step>
+
+</CaseStudy.Process>
+
+<CaseStudy.Result>
+
+The app is live and runs in the browser, on desktop or mobile.
+
+<Metrics>
+  <MetricPanel label="Central question" value="1" hint="how much can I still spend this month" />
+  <MetricPanel label="Ways to log" value="3" hint="voice, free text and a form" />
+  <MetricPanel label="Entries saved without review" value="0" hint="the AI suggests, the person confirms" />
+</Metrics>
+
+What I would do differently: measure from day one how long a single log takes, from intent to saved entry. That is the number that says whether the product keeps its promise.
+
+</CaseStudy.Result>

@@ -1,0 +1,42 @@
+---
+title: "Risco de crédito PJ com banco de grafos"
+summary: "Iniciação científica: a cadeia de suprimentos de cada empresa entra como peso no modelo de risco, modelada em um banco de grafos."
+outcome: "Classificada entre os 30 melhores trabalhos de iniciação científica."
+tracks: [data, ai]
+status: done
+role: "Propus usar a cadeia de suprimentos de cada empresa como peso na classificação de risco."
+period: "FIAP · 2022 a 2025"
+stack: [Banco de grafos, Modelagem de dados, Classificação de risco]
+featured: false
+order: 6
+cover: "art:graph"
+coverAlt: "Ilustração de um grafo de empresas ligadas por relações de fornecimento, com uma delas em destaque."
+---
+
+<CaseStudy.Context>
+
+Um modelo de risco de crédito para empresas costuma olhar cada empresa isoladamente: seus números, seu histórico. Só que nenhuma empresa quebra sozinha. Se o principal fornecedor ou o principal cliente vai mal, o risco dela muda, e isso não aparece nos dados dela.
+
+</CaseStudy.Context>
+
+<CaseStudy.Process>
+
+<CaseStudy.Step title="A proposta">
+Minha proposta foi tratar a <Mark>cadeia de suprimentos de cada empresa como um peso</Mark> na classificação de risco: quem depende de quem, e quanto.
+</CaseStudy.Step>
+
+<CaseStudy.Step title="Por que um grafo">
+Dependência entre empresas é uma relação, e relação é o que um banco de grafos guarda como dado de primeira classe. A pergunta "quem é afetado se esta empresa falhar?" vira um caminho no grafo, em vez de uma série de junções entre tabelas.
+</CaseStudy.Step>
+
+</CaseStudy.Process>
+
+<CaseStudy.Result>
+
+<Metrics>
+  <MetricPanel label="Classificação" value="Top 30" hint="entre os trabalhos de iniciação científica da FIAP" />
+</Metrics>
+
+A dependência entre empresas, antes invisível para o modelo, passou a ser um peso mensurável.
+
+</CaseStudy.Result>

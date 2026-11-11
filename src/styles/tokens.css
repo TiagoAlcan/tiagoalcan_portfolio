@@ -1,0 +1,126 @@
+/*
+ * Design tokens. The five palette hex values live here and nowhere else.
+ * See docs/01-design-system.md, chapters 1 to 3 and 10.
+ */
+
+:root {
+  /* Palette */
+  --cream: #f2edd5;
+  --red: #e7390d;
+  --orange: #f26716;
+  --green: #084a24;
+  --deep: #04261e;
+
+  /* Semantic tokens, light theme */
+  --bg: var(--cream);
+  --surface: color-mix(in srgb, var(--cream) 96%, black);
+  --surface-inverse: var(--deep);
+  --on-inverse: var(--cream);
+  --text: var(--deep);
+  --text-muted: color-mix(in srgb, var(--deep) 72%, var(--cream));
+  --heading: var(--green);
+  --site-accent: var(--red);
+  --action-bg: var(--orange);
+  --action-text: var(--deep);
+  --site-border: color-mix(in srgb, var(--deep) 16%, transparent);
+  --focus: var(--green);
+  --mark-swipe: color-mix(in srgb, var(--orange) 35%, transparent);
+
+  color-scheme: light;
+}
+
+/* Dark theme: chosen explicitly, or inherited from the system when no choice is stored. */
+:root.dark {
+  --bg: var(--deep);
+  --surface: var(--green);
+  --surface-inverse: var(--cream);
+  --on-inverse: var(--deep);
+  --text: var(--cream);
+  --text-muted: color-mix(in srgb, var(--cream) 72%, var(--deep));
+  --heading: var(--cream);
+  --site-accent: var(--orange);
+  --site-border: color-mix(in srgb, var(--cream) 16%, transparent);
+  --focus: var(--orange);
+  --mark-swipe: color-mix(in srgb, var(--orange) 30%, transparent);
+
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --bg: var(--deep);
+    --surface: var(--green);
+    --surface-inverse: var(--cream);
+    --on-inverse: var(--deep);
+    --text: var(--cream);
+    --text-muted: color-mix(in srgb, var(--cream) 72%, var(--deep));
+    --heading: var(--cream);
+    --site-accent: var(--orange);
+    --site-border: color-mix(in srgb, var(--cream) 16%, transparent);
+    --focus: var(--orange);
+    --mark-swipe: color-mix(in srgb, var(--orange) 30%, transparent);
+
+    color-scheme: dark;
+  }
+}
+
+/*
+ * Bridge to the annotation layer (Looseleaf). Its theme expects shadcn names
+ * and its own --ll-* stationery colors; both are aliased to the palette so
+ * there is a single source of color.
+ */
+:root {
+  /* shadcn aliases */
+  --background: var(--bg);
+  --foreground: var(--text);
+  --card: var(--surface);
+  --card-foreground: var(--text);
+  --popover: var(--surface);
+  --popover-foreground: var(--text);
+  --primary: var(--action-bg);
+  --primary-foreground: var(--action-text);
+  --secondary: var(--surface);
+  --secondary-foreground: var(--text);
+  --muted: var(--surface);
+  --muted-foreground: var(--text-muted);
+  --accent: var(--surface);
+  --accent-foreground: var(--text);
+  --border: var(--site-border);
+  --input: var(--site-border);
+  --ring: var(--focus);
+
+  /* Ink drawn on the page follows the theme accent. */
+  --ll-marker: var(--site-accent);
+  --ll-red: var(--site-accent);
+  --ll-tangerine: var(--orange);
+  --ll-focus: var(--focus);
+  --ll-caret: var(--site-accent);
+  --ll-hi: var(--orange);
+  --ll-hi-select: var(--mark-swipe);
+  --ll-selection-text: var(--text);
+  --ll-desk: var(--bg);
+  --ll-desk-deep: var(--surface);
+  --ll-pencil-mark: var(--site-border);
+
+  /*
+   * Paper objects (polaroid, sticky note, stamp) keep cream stock and deep
+   * green ink in both themes: paper stays paper on a dark desk.
+   */
+  --ll-ink: var(--deep);
+  --ll-ink-soft: color-mix(in srgb, var(--deep) 84%, var(--cream));
+  --ll-ink-muted: color-mix(in srgb, var(--deep) 72%, var(--cream));
+  --ll-paper: color-mix(in srgb, var(--cream) 70%, white);
+  --ll-paper-shade: var(--cream);
+  --ll-photo: color-mix(in srgb, var(--cream) 55%, white);
+  --ll-sticky-yellow: color-mix(in srgb, var(--cream) 82%, var(--orange));
+  --ll-sticky-orange: color-mix(in srgb, var(--cream) 62%, var(--orange));
+  --ll-sticky-green: color-mix(in srgb, var(--cream) 80%, var(--green));
+  --ll-green: var(--green);
+}
+
+/* Brand mark. */
+:root {
+  --logo-accent: var(--site-accent);
+  --logo-tile: var(--text);
+  --logo-on-tile: var(--bg);
+}

@@ -1,0 +1,42 @@
+---
+title: "Business credit risk with a graph database"
+summary: "Undergraduate research: each company's supply chain becomes a weight in the risk model, represented in a graph database."
+outcome: "Ranked in the top 30 undergraduate research projects."
+tracks: [data, ai]
+status: done
+role: "I proposed using each company's supply chain as a weight in the risk classification."
+period: "FIAP · 2022 to 2025"
+stack: [Graph database, Data modeling, Risk classification]
+featured: false
+order: 6
+cover: "art:graph"
+coverAlt: "Illustration of a graph of companies linked by supply relationships, with one of them highlighted."
+---
+
+<CaseStudy.Context>
+
+A business credit risk model usually looks at each company in isolation: its numbers, its history. But no company fails alone. If its main supplier or its main customer is in trouble, its risk changes, and that does not show up in its own data.
+
+</CaseStudy.Context>
+
+<CaseStudy.Process>
+
+<CaseStudy.Step title="The proposal">
+My proposal was to treat <Mark>each company's supply chain as a weight</Mark> in the risk classification: who depends on whom, and how much.
+</CaseStudy.Step>
+
+<CaseStudy.Step title="Why a graph">
+Dependency between companies is a relationship, and relationships are what a graph database stores as first-class data. The question "who is affected if this company fails?" becomes a path in the graph instead of a chain of table joins.
+</CaseStudy.Step>
+
+</CaseStudy.Process>
+
+<CaseStudy.Result>
+
+<Metrics>
+  <MetricPanel label="Ranking" value="Top 30" hint="among FIAP's undergraduate research projects" />
+</Metrics>
+
+The dependency between companies, previously invisible to the model, became a measurable weight.
+
+</CaseStudy.Result>

@@ -1,0 +1,59 @@
+---
+title: "Observability for a payment authorizer"
+summary: "From the metric in Java code to the Grafana dashboard, for a system that authorizes more than 1 million credit transactions a day."
+outcome: "Dashboards the client reads without knowing the query behind them."
+tracks: [devops, data]
+status: done
+role: "I worked on the whole path: Java instrumentation, the Prometheus endpoint, PromQL queries, alerts and dashboards."
+period: "2025 to now"
+stack: [Java, Prometheus, PromQL, Alertmanager, Grafana]
+featured: true
+order: 2
+cover: "art:dashboard"
+coverAlt: "Illustration of an observability dashboard with a time series and three indicators, using made-up data."
+confidential: true
+---
+
+<CaseStudy.Context>
+
+The system authorizes credit payments for large Brazilian financial institutions, at **more than 1 million transactions a day**. The people operating it need to know what it is doing right now, and the people paying for it need to read that answer without an engineer sitting next to them.
+
+The stated challenge was this: build a **simple** dashboard that delivers value to the client. A million a day sounds like a lot, but it averages about 12 per second. The average is calm; peaks are what take a system down. A dashboard that only shows the daily total hides exactly the moment that matters.
+
+</CaseStudy.Context>
+
+<CaseStudy.Process>
+
+<CaseStudy.Step title="Instrument in the code">
+Metrics start in the Java application. I worked on the instrumentation and on exposing the endpoint Prometheus scrapes.
+</CaseStudy.Step>
+
+<CaseStudy.Step title="Ask before you query">
+Every panel starts from a question someone really asks, and only then becomes a PromQL query. The rule I follow: <Mark>if a dashboard needs explaining, it is a report</Mark>. A good one answers in five seconds.
+</CaseStudy.Step>
+
+<Terminal title="promql" lines={["# rate over a time window, not the daily total", "sum(rate(transactions_total[5m]))", "", "# who is hurting: p99, not the average", "histogram_quantile(0.99, sum(rate(duration_bucket[5m])) by (le))"]} />
+
+<CaseStudy.Step title="Alert on what needs action">
+Alertmanager alerts follow the same logic as the panels: they fire when someone has to do something.
+</CaseStudy.Step>
+
+<CaseStudy.Step title="Prototype and organize before building">
+The biggest lesson was about process. Organizing the content and prototyping the dashboard before building it in Grafana avoided rework and made the conversation with the client more objective.
+</CaseStudy.Step>
+
+</CaseStudy.Process>
+
+<CaseStudy.Result>
+
+The client now reads the dashboards without needing to know PromQL.
+
+<Metrics>
+  <MetricPanel label="Transactions a day" value="1M+" hint="volume of the observed system" series />
+  <MetricPanel label="Average per second" value="~12" hint="1 million divided by 86,400 s" />
+  <MetricPanel label="Requests above p99" value="10k/day" hint="1% of 1 million, every day" />
+</Metrics>
+
+What I would do differently: start with the prototype from the very first panel, instead of finding that out halfway through.
+
+</CaseStudy.Result>

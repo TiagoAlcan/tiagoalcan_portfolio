@@ -1,0 +1,59 @@
+---
+title: "Infraestrutura AWS com Terraform"
+summary: "Um ambiente descrito como código: API em EC2, banco em sub-rede privada e um documento de arquitetura. Entrega da fase 1 da pós."
+outcome: "Ambiente inteiro reproduzível com um comando, por cerca de US$ 28,64 ao mês."
+tracks: [devops]
+status: done
+role: "Trabalho em grupo de cinco pessoas, na pós em DevOps e Arquitetura Cloud."
+period: "2026"
+stack: [Terraform, AWS, EC2, RDS, PostgreSQL, Docker, Docker Compose, Python]
+featured: false
+order: 5
+cover: "art:aws"
+coverAlt: "Diagrama da arquitetura: usuário, internet gateway, uma VPC com sub-rede pública (EC2) e sub-rede privada (RDS PostgreSQL)."
+links:
+  - label: "Repositório no GitHub"
+    href: "https://github.com/TiagoAlcan/fase1_devops_fiap_postech"
+---
+
+<CaseStudy.Context>
+
+A primeira fase da pós pedia o MVP de uma plataforma de *feature flags* como serviço: uma API monolítica simples para ligar e desligar funcionalidades em produção sem um novo deploy.
+
+O que interessava não era a API em si, e sim o caminho até ela estar no ar: um ambiente na AWS que qualquer pessoa do grupo conseguisse criar, destruir e recriar igual.
+
+</CaseStudy.Context>
+
+<CaseStudy.Process>
+
+<CaseStudy.Step title="A rede primeiro">
+Uma VPC com duas sub-redes. A aplicação fica na sub-rede **pública**, em uma EC2 `t3.micro`, acessível pelo Internet Gateway na porta 5000. O banco RDS PostgreSQL fica na sub-rede **privada**, sem acesso público.
+</CaseStudy.Step>
+
+<CaseStudy.Step title="Segurança em camadas">
+O security group do banco libera a porta 5432 <Mark>apenas para o security group da aplicação</Mark>. O SSH da EC2 é restrito aos IPs do grupo. As credenciais do banco vêm de variáveis de ambiente, nunca do código.
+</CaseStudy.Step>
+
+<Terminal title="terraform/" lines={["main.tf          network.tf", "ec2.tf           rds.tf", "iam.tf           security_groups.tf", "variables.tf     outputs.tf", "", "$ terraform apply"]} />
+
+<CaseStudy.Step title="O mesmo ambiente na máquina local">
+Um Dockerfile e um Docker Compose sobem a aplicação e o banco localmente, para desenvolver sem depender da nuvem.
+</CaseStudy.Step>
+
+<CaseStudy.Step title="Medir o que se construiu">
+O projeto foi avaliado contra os 12 fatores e teve o custo estimado na calculadora da AWS antes de ser provisionado.
+</CaseStudy.Step>
+
+</CaseStudy.Process>
+
+<CaseStudy.Result>
+
+<Metrics>
+  <MetricPanel label="Custo estimado" value="US$ 28,64" hint="por mês, uso contínuo em us-east-1" />
+  <MetricPanel label="12 fatores atendidos" value="8 de 12" hint="3 parciais e 1 não atendido" />
+  <MetricPanel label="Acesso público ao banco" value="0" hint="só a aplicação fala com o RDS" />
+</Metrics>
+
+O repositório é público e traz o Terraform, o Dockerfile, o Docker Compose e o documento de arquitetura.
+
+</CaseStudy.Result>

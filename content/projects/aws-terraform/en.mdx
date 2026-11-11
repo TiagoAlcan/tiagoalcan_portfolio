@@ -1,0 +1,59 @@
+---
+title: "AWS infrastructure with Terraform"
+summary: "An environment described as code: an API on EC2, a database in a private subnet and an architecture document. Phase 1 of my postgraduate program."
+outcome: "A whole environment reproducible with one command, for about US$ 28.64 a month."
+tracks: [devops]
+status: done
+role: "Group work with five people, for the postgraduate program in DevOps and Cloud Architecture."
+period: "2026"
+stack: [Terraform, AWS, EC2, RDS, PostgreSQL, Docker, Docker Compose, Python]
+featured: false
+order: 5
+cover: "art:aws"
+coverAlt: "Architecture diagram: user, internet gateway, a VPC with a public subnet (EC2) and a private subnet (RDS PostgreSQL)."
+links:
+  - label: "GitHub repository"
+    href: "https://github.com/TiagoAlcan/fase1_devops_fiap_postech"
+---
+
+<CaseStudy.Context>
+
+The first phase of the program asked for the MVP of a feature-flags-as-a-service platform: a simple monolithic API to switch features on and off in production without a new deploy.
+
+The interesting part was not the API itself but the path to getting it live: an AWS environment anyone in the group could create, destroy and recreate identically.
+
+</CaseStudy.Context>
+
+<CaseStudy.Process>
+
+<CaseStudy.Step title="Network first">
+One VPC with two subnets. The application sits in the **public** subnet, on a `t3.micro` EC2 instance reachable through the Internet Gateway on port 5000. The RDS PostgreSQL database sits in the **private** subnet, with no public access.
+</CaseStudy.Step>
+
+<CaseStudy.Step title="Security in layers">
+The database security group opens port 5432 <Mark>only to the application's security group</Mark>. SSH to the instance is restricted to the group's IPs. Database credentials come from environment variables, never from code.
+</CaseStudy.Step>
+
+<Terminal title="terraform/" lines={["main.tf          network.tf", "ec2.tf           rds.tf", "iam.tf           security_groups.tf", "variables.tf     outputs.tf", "", "$ terraform apply"]} />
+
+<CaseStudy.Step title="The same environment on a laptop">
+A Dockerfile and a Docker Compose file bring the application and the database up locally, so development does not depend on the cloud.
+</CaseStudy.Step>
+
+<CaseStudy.Step title="Measure what was built">
+The project was assessed against the twelve factors and had its cost estimated in the AWS calculator before anything was provisioned.
+</CaseStudy.Step>
+
+</CaseStudy.Process>
+
+<CaseStudy.Result>
+
+<Metrics>
+  <MetricPanel label="Estimated cost" value="US$ 28.64" hint="per month, running continuously in us-east-1" />
+  <MetricPanel label="Twelve factors met" value="8 of 12" hint="3 partially met and 1 not met" />
+  <MetricPanel label="Public access to the database" value="0" hint="only the application talks to RDS" />
+</Metrics>
+
+The repository is public and includes the Terraform code, the Dockerfile, the Docker Compose file and the architecture document.
+
+</CaseStudy.Result>

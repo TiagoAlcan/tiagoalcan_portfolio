@@ -1,0 +1,212 @@
+@import "tailwindcss";
+@import "../styles/looseleaf.css";
+@import "../styles/tokens.css";
+
+@source "../../content";
+
+@theme inline {
+  --color-page: var(--bg);
+  --color-surface: var(--surface);
+  --color-inverse: var(--surface-inverse);
+  --color-on-inverse: var(--on-inverse);
+  --color-fg: var(--text);
+  --color-fg-muted: var(--text-muted);
+  --color-heading: var(--heading);
+  --color-brand: var(--site-accent);
+  --color-action: var(--action-bg);
+  --color-on-action: var(--action-text);
+  --color-edge: var(--site-border);
+  --color-focus-ring: var(--focus);
+
+  --font-sans: var(--font-instrument), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, "SFMono-Regular", monospace;
+
+  --radius-control: 8px;
+  --radius-card: 16px;
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+}
+
+@layer base {
+  html {
+    background-color: var(--bg);
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    accent-color: var(--action-bg);
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    font-size: clamp(1rem, 0.978rem + 0.094vw, 1.0625rem);
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    color: var(--heading);
+    line-height: 1.1;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background-color: var(--mark-swipe);
+    color: var(--text);
+  }
+
+  * {
+    scrollbar-color: var(--site-border) transparent;
+  }
+}
+
+/* Fluid type scale, 375 px to 1440 px. docs/01-design-system.md, chapter 4. */
+@utility text-display {
+  font-size: clamp(2.75rem, 1.781rem + 4.131vw, 5.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+}
+
+@utility text-h1 {
+  font-size: clamp(2.25rem, 1.81rem + 1.878vw, 3.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+@utility text-h2 {
+  font-size: clamp(1.75rem, 1.486rem + 1.127vw, 2.5rem);
+  line-height: 1.12;
+}
+
+@utility text-h3 {
+  font-size: clamp(1.375rem, 1.243rem + 0.563vw, 1.75rem);
+  line-height: 1.2;
+}
+
+@utility text-body-lg {
+  font-size: clamp(1.125rem, 1.081rem + 0.188vw, 1.25rem);
+  line-height: 1.55;
+}
+
+@utility mono-label {
+  font-family: var(--font-mono);
+  font-size: clamp(0.75rem, 0.728rem + 0.094vw, 0.8125rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+@utility shell {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 16px;
+
+  @media (min-width: 768px) {
+    padding-inline: 32px;
+  }
+}
+
+@utility measure {
+  max-width: 68ch;
+}
+
+@utility dot-grid {
+  background-image: radial-gradient(var(--site-border) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Scroll reveal: short lift and fade, once. Only when motion is allowed and JS is on. */
+@media (prefers-reduced-motion: no-preference) {
+  html.js [data-reveal] {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 500ms var(--ease-out-soft),
+      transform 500ms var(--ease-out-soft);
+  }
+
+  html.js [data-reveal="in"] {
+    opacity: 1;
+    transform: none;
+  }
+
+  @keyframes status-pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.35;
+    }
+  }
+
+  .status-pulse {
+    animation: status-pulse 2.4s ease-in-out infinite;
+  }
+}
+
+/* Long-form copy inside case studies. */
+.prose-case p {
+  max-width: 68ch;
+  margin-block: 1em;
+}
+
+.prose-case ul,
+.prose-case ol {
+  max-width: 68ch;
+  margin-block: 1em;
+  padding-inline-start: 1.25em;
+}
+
+.prose-case ul {
+  list-style: disc;
+}
+
+.prose-case ol {
+  list-style: decimal;
+}
+
+.prose-case li {
+  margin-block: 0.4em;
+}
+
+.prose-case li::marker {
+  color: var(--site-accent);
+}
+
+.prose-case strong {
+  font-weight: 600;
+}
+
+.prose-case a {
+  text-decoration: underline;
+  text-decoration-color: var(--site-accent);
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 2px;
+}
+
+.prose-case code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: var(--surface);
+  border: 1px solid var(--site-border);
+  border-radius: 6px;
+  padding: 0.1em 0.35em;
+}

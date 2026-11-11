@@ -1,0 +1,47 @@
+---
+title: "projeto_restart: da API e do scraping ao dashboard"
+summary: "Um projeto de dados de ponta a ponta para busca de animais perdidos e encontrados: coleta, camadas de dados, modelo e dashboard."
+outcome: "Em andamento: a arquitetura está desenhada e documentada."
+tracks: [data]
+status: in-progress
+role: "Desenho da arquitetura e documentação em diagramas."
+period: "2026"
+stack: [Python, Scraping, API, Docker Compose, Arquitetura medalhão]
+featured: false
+order: 8
+cover: "art:chart"
+coverAlt: "Ilustração de um fluxo de dados em três camadas (bruto, limpo e pronto para consumo) terminando em um gráfico."
+links:
+  - label: "Repositório no GitHub"
+    href: "https://github.com/TiagoAlcan/projeto_restart"
+---
+
+<CaseStudy.Context>
+
+Quem perde um animal e quem encontra um publicam em lugares diferentes, e os dois anúncios raramente se cruzam. O projeto_restart é um projeto de dados de ponta a ponta para aproximar essas duas pontas: coletar os anúncios, organizá-los e mostrar o resultado em um dashboard interativo.
+
+</CaseStudy.Context>
+
+<CaseStudy.Process>
+
+<CaseStudy.Step title="Desenhar antes de construir">
+O repositório começa pela arquitetura. Seis diagramas descrevem o sistema por ângulos diferentes: visão geral, componentes, fluxo de dados, implantação, sequência e estados.
+</CaseStudy.Step>
+
+<CaseStudy.Step title="Camadas de dados sem infraestrutura pesada">
+Os dados passam por três camadas, <Mark>bruto, limpo e pronto para consumo</Mark>, simuladas localmente em pastas. A ideia é ter a disciplina de um data lake sem precisar de nuvem no primeiro dia.
+</CaseStudy.Step>
+
+<Terminal title="project_restart/" lines={["src/api/          backend", "src/scrapers/     coleta de dados", "src/ml_engine/    inferência e matching", "src/dashboard/    frontend", "data/raw  →  data/processed  →  data/curated", "", "$ docker compose up"]} />
+
+<CaseStudy.Step title="Um comando para subir tudo">
+Em vez de vários repositórios ou de Kubernetes logo de início, um único Docker Compose sobe o ambiente de desenvolvimento inteiro.
+</CaseStudy.Step>
+
+</CaseStudy.Process>
+
+<CaseStudy.Result>
+
+O projeto está em andamento. Hoje o repositório público contém a arquitetura e os diagramas; a implementação ainda não está publicada.
+
+</CaseStudy.Result>

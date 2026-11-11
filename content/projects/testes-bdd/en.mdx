@@ -1,0 +1,41 @@
+---
+title: "Test documentation in BDD"
+summary: "Quality criteria that used to be implicit, written as scenarios that the client and the team read the same way."
+outcome: "Adopted by the client as their quality bar."
+tracks: [software]
+status: done
+role: "I wrote the technical test documentation following BDD and delivered it to the client."
+period: "THCS"
+stack: [BDD, Gherkin, Postman, JMeter]
+featured: false
+order: 7
+cover: "art:bdd"
+coverAlt: "Illustration of a test scenario written in the given, when, then format, with made-up content."
+confidential: true
+---
+
+<CaseStudy.Context>
+
+Every system has quality criteria. The trouble starts when they only exist in the tester's head: the client cannot check them, and the team cannot repeat them.
+
+</CaseStudy.Context>
+
+<CaseStudy.Process>
+
+<CaseStudy.Step title="Write the behavior, not the test">
+BDD describes what the system should do in a language that business and engineering people read the same way: given a context, when something happens, then a result is expected.
+</CaseStudy.Step>
+
+<Terminal title="scenario.feature (made-up example)" lines={["Scenario: transaction above the limit", "  Given a card with an available limit of R$ 100.00", "  When a purchase of R$ 150.00 is submitted", "  Then the transaction is declined", "  And the stated reason is insufficient limit"]} />
+
+<CaseStudy.Step title="A document the client can check">
+Each scenario is documentation and acceptance criterion at once: if the described behavior does not happen, the test fails and everyone understands why.
+</CaseStudy.Step>
+
+</CaseStudy.Process>
+
+<CaseStudy.Result>
+
+The documentation was delivered to the client and <Mark>adopted as their quality bar</Mark>. Criteria that used to be implicit now have a text both sides sign off on.
+
+</CaseStudy.Result>

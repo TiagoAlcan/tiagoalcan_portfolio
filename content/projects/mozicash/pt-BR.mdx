@@ -1,0 +1,63 @@
+---
+title: "MoziCash: finanças pessoais com agente de IA"
+summary: "App de finanças pessoais que responde a uma pergunta só: quanto ainda posso gastar neste mês? O gasto é registrado por voz ou texto, em segundos."
+outcome: "Um número na tela inicial responde à pergunta, sem planilha."
+tracks: [software, ai]
+status: done
+role: "Projeto pessoal. Fiz o produto inteiro: interface, API, banco de dados e a integração com o modelo de IA."
+period: "2026"
+stack: [React, Tailwind, Python, FastAPI, Supabase, PostgreSQL, Google Gemini, Vercel]
+featured: true
+order: 1
+cover: /projects/mozicash/cover.webp
+coverAlt: "Tela de resumo do MoziCash mostrando quanto ainda se pode gastar no mês, com dados de demonstração."
+links:
+  - label: "Abrir o app"
+    href: "https://mozicash.vercel.app"
+---
+
+<CaseStudy.Context>
+
+Quem tenta organizar o dinheiro costuma parar na mesma etapa: anotar cada gasto dá trabalho, e a planilha é abandonada na segunda semana. Sem o registro, a pergunta que importa fica sem resposta: **quanto ainda posso gastar neste mês?**
+
+O MoziCash é um projeto pessoal **inspirado no meu TCC**, e os dois não são o mesmo projeto. No TCC, um aplicativo de organização financeira orientada a metas com agente pessoal de IA, liderei o time, defini as boas práticas de desenvolvimento e organizei as entregas por prioridade. O MoziCash retoma a ideia com outro recorte: menos telas e uma pergunta central.
+
+</CaseStudy.Context>
+
+<CaseStudy.Process>
+
+<CaseStudy.Step title="Uma pergunta, um número">
+A tela inicial foi desenhada em volta de um único valor: <Mark>o que ainda dá para gastar até o fim do mês</Mark>, já descontados os gastos fixos e o que foi lançado. O resto da tela existe para explicar esse número, e não para competir com ele.
+</CaseStudy.Step>
+
+<Shot src="/projects/mozicash/resumo.webp" width={1600} height={1533} alt="Tela de resumo do MoziCash: o valor disponível em destaque, a divisão entre gastos fixos e variáveis e o gráfico do mês." caption="O número primeiro, a explicação depois." />
+
+<CaseStudy.Step title="Registrar tem de ser mais rápido que esquecer">
+O gasto é dito ou escrito do jeito que a pessoa falaria, como "almoço 32 reais no restaurante do trabalho". O modelo de IA extrai título, data, valor e categoria e preenche o formulário.
+</CaseStudy.Step>
+
+<CaseStudy.Step title="Um humano no controle">
+A IA não salva nada sozinha. Ela preenche os campos, avisa que o conteúdo foi interpretado e espera a pessoa revisar e confirmar. Foi a decisão que mais pesou: um lançamento errado feito em silêncio destruiria a confiança no número da tela inicial.
+</CaseStudy.Step>
+
+<Shot src="/projects/mozicash/chat.webp" width={1600} height={1203} alt="Formulário de novo lançamento do MoziCash, preenchido pela IA a partir da frase digitada, aguardando confirmação." caption="A IA preenche. Quem salva é a pessoa." />
+
+<CaseStudy.Step title="Limites e onde economizar">
+Cada categoria pode ter um limite, com alerta quando ele se aproxima, e uma tela aponta onde há espaço para economizar.
+</CaseStudy.Step>
+
+</CaseStudy.Process>
+
+<CaseStudy.Result>
+
+O app está publicado e pode ser usado no navegador, no computador ou no celular.
+
+<Metrics>
+  <MetricPanel label="Pergunta central" value="1" hint="quanto ainda posso gastar neste mês" />
+  <MetricPanel label="Formas de registrar" value="3" hint="voz, texto livre e formulário" />
+  <MetricPanel label="Lançamentos salvos sem revisão" value="0" hint="a IA sugere, a pessoa confirma" />
+</Metrics>
+
+O que eu faria diferente: medir desde o primeiro dia quanto tempo leva um registro, da intenção ao lançamento salvo. É o número que diz se a promessa do produto se cumpre.
+
+</CaseStudy.Result>

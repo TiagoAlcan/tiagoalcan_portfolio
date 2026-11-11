@@ -1,0 +1,47 @@
+---
+title: "projeto_restart: from API and scraping to a dashboard"
+summary: "An end-to-end data project for finding lost and found animals: collection, data layers, a model and a dashboard."
+outcome: "In progress: the architecture is designed and documented."
+tracks: [data]
+status: in-progress
+role: "Architecture design and documentation in diagrams."
+period: "2026"
+stack: [Python, Scraping, API, Docker Compose, Medallion architecture]
+featured: false
+order: 8
+cover: "art:chart"
+coverAlt: "Illustration of a data flow in three layers (raw, cleaned and ready to use) ending in a chart."
+links:
+  - label: "GitHub repository"
+    href: "https://github.com/TiagoAlcan/projeto_restart"
+---
+
+<CaseStudy.Context>
+
+People who lose a pet and people who find one post in different places, and the two posts rarely meet. projeto_restart is an end-to-end data project to bring those two ends together: collect the posts, organize them and show the result in an interactive dashboard.
+
+</CaseStudy.Context>
+
+<CaseStudy.Process>
+
+<CaseStudy.Step title="Design before building">
+The repository starts with the architecture. Six diagrams describe the system from different angles: overview, components, data flow, deployment, sequence and states.
+</CaseStudy.Step>
+
+<CaseStudy.Step title="Data layers without heavy infrastructure">
+Data moves through three layers, <Mark>raw, cleaned and ready to use</Mark>, simulated locally as folders. The idea is to get the discipline of a data lake without needing the cloud on day one.
+</CaseStudy.Step>
+
+<Terminal title="project_restart/" lines={["src/api/          backend", "src/scrapers/     data collection", "src/ml_engine/    inference and matching", "src/dashboard/    frontend", "data/raw  →  data/processed  →  data/curated", "", "$ docker compose up"]} />
+
+<CaseStudy.Step title="One command to bring everything up">
+Instead of several repositories or Kubernetes from the start, a single Docker Compose file brings up the whole development environment.
+</CaseStudy.Step>
+
+</CaseStudy.Process>
+
+<CaseStudy.Result>
+
+The project is in progress. Today the public repository holds the architecture and the diagrams; the implementation is not published yet.
+
+</CaseStudy.Result>

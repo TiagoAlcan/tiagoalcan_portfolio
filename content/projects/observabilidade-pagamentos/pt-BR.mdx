@@ -1,0 +1,59 @@
+---
+title: "Observabilidade de um autorizador de pagamentos"
+summary: "Da métrica no código Java ao painel no Grafana, em um sistema que autoriza mais de 1 milhão de transações de crédito por dia."
+outcome: "Painéis que o cliente lê sem conhecer a consulta por trás."
+tracks: [devops, data]
+status: done
+role: "Participei de todo o caminho: instrumentação em Java, endpoint para o Prometheus, consultas em PromQL, alertas e painéis."
+period: "2025 até hoje"
+stack: [Java, Prometheus, PromQL, Alertmanager, Grafana]
+featured: true
+order: 2
+cover: "art:dashboard"
+coverAlt: "Ilustração de um painel de observabilidade com uma série temporal e três indicadores, com dados fictícios."
+confidential: true
+---
+
+<CaseStudy.Context>
+
+O sistema autoriza pagamentos de crédito para grandes instituições financeiras brasileiras, com **mais de 1 milhão de transações por dia**. Quem opera precisa saber o que ele está fazendo agora, e quem contrata precisa conseguir ler essa resposta sem depender de um engenheiro ao lado.
+
+O desafio declarado era este: construir um painel **simples**, que gerasse valor para o cliente. Um milhão por dia parece muito, mas dá uns 12 por segundo em média. A média é calma; o que derruba um sistema é o pico. Um painel que só mostra o total do dia esconde exatamente o momento que importa.
+
+</CaseStudy.Context>
+
+<CaseStudy.Process>
+
+<CaseStudy.Step title="Instrumentar no código">
+As métricas nascem na aplicação Java. Participei da instrumentação e da exposição do endpoint que o Prometheus coleta.
+</CaseStudy.Step>
+
+<CaseStudy.Step title="Perguntar antes de consultar">
+Cada painel começa por uma pergunta que alguém faz de verdade, e só depois vira consulta em PromQL. A regra que adotei: <Mark>se o painel precisa de explicação, ele é um relatório</Mark>. Um bom painel responde em cinco segundos.
+</CaseStudy.Step>
+
+<Terminal title="promql" lines={["# taxa por janela de tempo, não o total do dia", "sum(rate(transacoes_total[5m]))", "", "# quem está sofrendo: p99, não a média", "histogram_quantile(0.99, sum(rate(duracao_bucket[5m])) by (le))"]} />
+
+<CaseStudy.Step title="Alertar sobre o que exige ação">
+Os alertas no Alertmanager seguem a mesma lógica dos painéis: disparam quando alguém precisa fazer alguma coisa.
+</CaseStudy.Step>
+
+<CaseStudy.Step title="Prototipar e organizar antes de construir">
+O maior aprendizado foi de processo. Organizar o conteúdo e prototipar o painel antes de montá-lo no Grafana evitou retrabalho e deixou a conversa com o cliente mais objetiva.
+</CaseStudy.Step>
+
+</CaseStudy.Process>
+
+<CaseStudy.Result>
+
+Os painéis passaram a ser lidos pelo cliente sem que ele precise conhecer PromQL.
+
+<Metrics>
+  <MetricPanel label="Transações por dia" value="1M+" hint="volume do sistema observado" series />
+  <MetricPanel label="Média por segundo" value="~12" hint="1 milhão dividido por 86.400 s" />
+  <MetricPanel label="Requisições acima do p99" value="10 mil/dia" hint="1% de 1 milhão, todos os dias" />
+</Metrics>
+
+O que eu faria diferente: começar pelo protótipo desde o primeiro painel, em vez de descobrir isso no meio do caminho.
+
+</CaseStudy.Result>

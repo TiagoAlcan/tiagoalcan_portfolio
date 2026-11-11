@@ -1,12 +1,45 @@
-# Portfolio tiagoalcan
+# Portfólio · Tiago Alcântara
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Site em [tiagoalcan.vercel.app](https://tiagoalcan.vercel.app). O conceito é uma frase: **eu torno sistemas visíveis**.
 
-Currently, two official plugins are available:
+Os documentos de design foram escritos antes do código e estão em [`docs/`](docs/README.md): visão, design system, system design, padrões de código, modelo de conteúdo e ADRs. O que entrou nesta primeira entrega está em [`docs/05-escopo-v1.md`](docs/05-escopo-v1.md).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Stack
 
-## Expanding the ESLint configuration
+Next.js 16 (App Router, geração estática) · React 19 · TypeScript estrito · Tailwind CSS 4 · next-intl (PT-BR e EN) · next-themes · MDX validado com Zod · React Three Fiber · cmdk · camada de anotação com [Looseleaf](https://github.com/kevintngo/looseleaf).
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Rodar
+
+```bash
+npm install
+npm run dev        # http://localhost:3000
+npm run build      # gera todas as páginas; falha se faltar tradução ou frontmatter
+npm test           # funções puras, schemas e paridade das mensagens
+npm run lint
+```
+
+## Onde fica cada coisa
+
+| Caminho | O que tem |
+|---|---|
+| `content/projects/<slug>/` | Estudo de caso em `pt-BR.mdx` e `en.mdx` |
+| `content/*.ts` | Experiência, formação e dados do site, nos dois idiomas |
+| `messages/` | Textos de interface |
+| `src/app/[locale]/` | Páginas |
+| `src/components/` | `sections`, `case-study`, `command-palette`, `three`, `layout`, `brand` |
+| `src/components/ui/` | Primitivos do site e os componentes de anotação do Looseleaf |
+| `src/lib/content/` | Schemas e repositório de conteúdo: o único módulo que lê arquivos |
+| `src/styles/tokens.css` | Os cinco hex da paleta e os tokens semânticos |
+| `docs/brand/` | Opções de marca e os traçados SVG |
+
+## Adicionar um projeto
+
+Crie `content/projects/<slug>/pt-BR.mdx` e `en.mdx` com o frontmatter descrito em `docs/04-modelo-de-conteudo.md`. Nenhum componente precisa mudar. O build falha com uma mensagem clara se um campo obrigatório ou um dos idiomas faltar.
+
+## Trocar a marca
+
+`src/components/brand/marks.ts` traz as quatro opções. A constante `ACTIVE_MARK` escolhe a que aparece no site; o favicon está em `src/app/icon.svg`.
+
+## Privacidade
+
+Nenhum cliente é citado pelo nome e nenhuma tela de ambiente real aparece no site (ADR 0005). Projetos confidenciais mostram ilustrações com dados fictícios e avisam isso na página.

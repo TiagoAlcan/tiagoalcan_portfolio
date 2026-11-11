@@ -1,0 +1,41 @@
+---
+title: "Documentação de testes em BDD"
+summary: "Critérios de qualidade que estavam implícitos, escritos como cenários que cliente e time leem do mesmo jeito."
+outcome: "Documento adotado pelo cliente como parâmetro de qualidade."
+tracks: [software]
+status: done
+role: "Escrevi a documentação técnica de testes seguindo BDD e a entreguei ao cliente."
+period: "THCS"
+stack: [BDD, Gherkin, Postman, JMeter]
+featured: false
+order: 7
+cover: "art:bdd"
+coverAlt: "Ilustração de um cenário de teste escrito no formato dado, quando, então, com conteúdo fictício."
+confidential: true
+---
+
+<CaseStudy.Context>
+
+Todo sistema tem critérios de qualidade. O problema é quando eles só existem na cabeça de quem testa: o cliente não consegue conferir, e o time não consegue repetir.
+
+</CaseStudy.Context>
+
+<CaseStudy.Process>
+
+<CaseStudy.Step title="Escrever o comportamento, não o teste">
+BDD descreve o que o sistema deve fazer em uma linguagem que pessoas de negócio e de engenharia leem igual: dado um contexto, quando algo acontece, então um resultado é esperado.
+</CaseStudy.Step>
+
+<Terminal title="cenario.feature (exemplo fictício)" lines={["Cenário: transação acima do limite", "  Dado um cartão com limite disponível de R$ 100,00", "  Quando uma compra de R$ 150,00 é enviada", "  Então a transação é negada", "  E o motivo informado é limite insuficiente"]} />
+
+<CaseStudy.Step title="Um documento que o cliente consegue conferir">
+Cada cenário é ao mesmo tempo documentação e critério de aceite: se o comportamento descrito não acontece, o teste falha e todo mundo entende por quê.
+</CaseStudy.Step>
+
+</CaseStudy.Process>
+
+<CaseStudy.Result>
+
+A documentação foi entregue ao cliente e <Mark>adotada por ele como parâmetro de qualidade</Mark>. Critérios que eram implícitos passaram a ter um texto que os dois lados assinam.
+
+</CaseStudy.Result>
