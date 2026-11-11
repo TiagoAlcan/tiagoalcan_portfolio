@@ -161,10 +161,11 @@
 }
 
 /*
- * The annotation layer re-declares its derived colours inside its own scope,
- * which sits below :root. The typewriter caret has to be pinned there, or it
- * falls back to the library's dark-blue ink and disappears on the dark theme.
+ * The typewriter caret is drawn with the annotation layer's ink colour, which
+ * is deep green in both themes (paper objects keep their ink). On the dark
+ * page that is green on green, so the caret takes the theme accent instead:
+ * red on the light theme, orange on the dark one.
  */
-[data-ll-scope] {
-  --ll-caret: var(--site-accent);
+[data-slot="typewriter-caret"] {
+  --ll-ink: var(--site-accent);
 }
