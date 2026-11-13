@@ -48,7 +48,7 @@ export function CommandPalette({ projects }: { projects: PaletteProject[] }) {
     setTheme,
     switchLocale: () => {
       const other = routing.locales.find((l) => l !== locale) ?? routing.defaultLocale;
-      router.replace({ pathname, params } as never, { locale: other });
+      router.replace({ pathname, params } as never, { locale: other, scroll: false });
     },
     copy: (text) => {
       navigator.clipboard?.writeText(text).then(() => {

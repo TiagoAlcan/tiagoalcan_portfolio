@@ -42,6 +42,8 @@ export function LocaleSwitch() {
                 // The pathname is one of the known routes; params carry the slug when there is one.
                 href={{ pathname, params } as never}
                 locale={l}
+                // Same page in another language: stay where the reader is instead of scrolling to the new page's top.
+                scroll={false}
                 hrefLang={l}
                 lang={l}
                 aria-label={t("switchTo")}
