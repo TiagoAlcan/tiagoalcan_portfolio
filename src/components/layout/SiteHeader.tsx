@@ -2,7 +2,7 @@ import { getTranslations } from "next-intl/server";
 
 import { Logo } from "@/components/brand/Logo";
 import { CommandPalette, type PaletteProject } from "@/components/command-palette/CommandPalette";
-import { Link } from "@/i18n/navigation";
+import { HomeLink } from "./HomeLink";
 import { LocaleSwitch } from "./LocaleSwitch";
 import { MobileMenu } from "./MobileMenu";
 import { NavLinks } from "./NavLinks";
@@ -14,9 +14,9 @@ export async function SiteHeader({ projects }: { projects: PaletteProject[] }) {
   return (
     <header className="sticky top-0 z-40 border-b border-edge bg-page/85 backdrop-blur-md">
       <div className="shell relative flex h-16 items-center justify-between gap-1 sm:gap-3">
-        <Link href="/" aria-label={t("home")} className="-ml-1 inline-flex min-h-11 items-center rounded-(--radius-control) px-1 text-heading">
+        <HomeLink aria-label={t("home")} className="-ml-1 inline-flex min-h-11 items-center rounded-(--radius-control) px-1 text-heading">
           <Logo />
-        </Link>
+        </HomeLink>
         <nav aria-label={t("mainNav")} className="hidden md:block">
           <NavLinks className="flex items-center gap-1" />
         </nav>
