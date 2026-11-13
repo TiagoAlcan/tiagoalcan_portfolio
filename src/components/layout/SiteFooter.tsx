@@ -5,6 +5,7 @@ import { ArrowUp, ArrowUpRight } from "@/components/ui/icons";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { contact, resume } from "@content/site";
+import { FooterQuote } from "./FooterQuote";
 
 const PAGES = [
   { href: "/capabilities", key: "capabilities" },
@@ -35,6 +36,7 @@ export async function SiteFooter() {
             <Logo />
           </span>
           <p className="mt-3 font-display text-[1.15rem] text-heading">{t("concept")}</p>
+          <FooterQuote />
         </div>
 
         <nav aria-label={t("more")}>
